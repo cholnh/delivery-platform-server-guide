@@ -1,10 +1,10 @@
-# 배달 서비스 플랫폼 API 서버 가이드
+# :truck: 배달 서비스 플랫폼 API 서버 가이드
 
 <br/><br/>
 
 
 
-## 개요
+## :speech_balloon: 개요
 
 비지니스 예시(배달 서비스)를 토대로 **도메인 설계부터 배포 까지** 
 직접 구현해 보고 작동 원리를 자세하게 공부하는 프로젝트입니다. 
@@ -17,7 +17,7 @@
 
 
 
-## Table of Contents
+## :book: Table of Contents
 
 - [1. 다루는 내용](https://github.com/cholnh/delivery-platform-server-guide#1-다루는-내용)
 - [2. 도메인 설계](https://github.com/cholnh/delivery-platform-server-guide#2-도메인-설계)
