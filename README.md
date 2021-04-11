@@ -27,3 +27,94 @@
 
 <br/>
 
+## 1. 다루는 내용
+
+### 설계 / 개발 패러다임
+- DDD
+- MSA
+- TDD
+- REST
+
+### 클라우드
+- GKE
+- Kubernetes
+- Docker
+- NginX
+
+### 핵심 마이크로 서비스
+- Spring Boot
+    + Spring Batch
+    + EHCache
+
+### 데이터 관리
+- Spring Data Jpa
+- ElasticSearch
+
+### 구성 관리
+- Spring Cloud Config
+
+### 비동기 메시징
+- Spring Cloud Stream
+- RabbitMQ
+
+### 회로차단/폴백/벌크헤드
+- Spring Cloud
+- Spring Netflix OSS
+
+### 빌드/배포
+- Travis CI
+
+### 로깅
+- Spring Cloud Sleuth
+- Papertrail
+- Zipkin
+~~- ELK (ElasticSearch, Logstash, kibana)~~
+
+### 보안
+- Spring Oauth2
+- Spring Cloud Security
+
+### 모니터링
+- Spring Actuator
+- Grafana
+- Prometheus
+
+### SCM
+- Git
+- GitHub
+
+<br/>
+
+<br/>
+
+## 2. 도메인 설계
+
+<br/>
+
+## 3. 전략과 도구
+
+<br/>
+
+## 4. 시스템 설계
+
+<br/>
+
+## 5. 마일스톤
+
+<br/>
+
+## 6. 인프라 구현
+
+<br/>
+
+## 7. 서비스 구현
+
+<br/>
+
+## 8. 마무리
+
+<br/>
+
+## 9. 회고
+
+<br/>
