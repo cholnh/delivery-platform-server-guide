@@ -1,6 +1,8 @@
 # 배달 서비스 플랫폼 API 서버 가이드
 
-<br/>
+<br/><br/>
+
+
 
 ## 개요
 
@@ -11,7 +13,9 @@
 더 좋은 구현방법, 더 효율적인 설계, 잘못된 내용이 있다면 **[이곳을](https://github.com/cholnh/delivery-platform-server-guide/issues)** 
 통해 언제든 리뷰해주시면 감사하겠습니다.
 
-<br/>
+<br/><br/>
+
+
 
 ## Table of Contents
 
@@ -25,7 +29,9 @@
 - [8. 마무리](https://github.com/cholnh/delivery-platform-server-guide#8-마무리)
 - [9. 회고](https://github.com/cholnh/delivery-platform-server-guide#9-회고)
 
-<br/>
+<br/><br/>
+
+
 
 ## 1. 다루는 내용
 
@@ -83,38 +89,52 @@
 - Git
 - GitHub
 
-<br/>
+<br/><br/>
 
-<br/>
+
 
 ## 2. 도메인 설계
 
-<br/>
+<br/><br/>
+
+
 
 ## 3. 전략과 도구
 
-<br/>
+<br/><br/>
+
+
 
 ## 4. 시스템 설계
 
-<br/>
+<br/><br/>
+
+
 
 ## 5. 마일스톤
 
-<br/>
+<br/><br/>
+
+
 
 ## 6. 인프라 구현
 
-<br/>
+<br/><br/>
+
+
 
 ## 7. 서비스 구현
 
-<br/>
+<br/><br/>
+
+
 
 ## 8. 마무리
 
-<br/>
+<br/><br/>
+
+
 
 ## 9. 회고
 
-<br/>
+<br/><br/>
