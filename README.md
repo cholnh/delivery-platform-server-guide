@@ -17,7 +17,7 @@
 
 
 
-## :book: Table of Contents
+## :note: Table of Contents
 
 - [1. 다루는 내용](https://github.com/cholnh/delivery-platform-server-guide#1-다루는-내용)
 - [2. 도메인 설계](https://github.com/cholnh/delivery-platform-server-guide#2-도메인-설계)
