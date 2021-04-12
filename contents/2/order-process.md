@@ -179,6 +179,6 @@
 
 <br/><br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/3.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/3.png" width="900"/>|
 |-|
 |주문 순서 흐름|
