@@ -55,11 +55,11 @@ API 서버 인터페이스 엔드 포인트는 URL 형식으로 제공되며 htt
 
 |HTTP 메서드|URI|요청|
 |-|-|-|
-|POST|https://api.domain.com/v1/products|새로운 제품정보 생성|
-|GET|https://api.domain.com/v1/products|제품정보 목록 조회|
-|GET|https://api.domain.com/v1/products/1|1번 제품정보 조회|
-|PUT|https://api.domain.com/v1/products/1|1번 제품정보 수정|
-|DELETE|https://api.domain.com/v1/products/1|1번 제품정보 삭제|
+|POST|`https://api.domain.com/v1/products`|새로운 제품정보 생성|
+|GET|`https://api.domain.com/v1/products`|제품정보 목록 조회|
+|GET|`https://api.domain.com/v1/products/1`|1번 제품정보 조회|
+|PUT|`https://api.domain.com/v1/products/1`|1번 제품정보 수정|
+|DELETE|`https://api.domain.com/v1/products/1`|1번 제품정보 삭제|
 
 각각의 HTTP 메서드에 따라 다른 행위가 요청됩니다.  
 
@@ -226,6 +226,8 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 <br/><br/>
 
 아래 그림은 주문 프로세스를 도식화한 결과입니다.
+각 주문 상태별 설명을 [이곳에](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/order-process.md#주문-프로세스) 
+정리해두었습니다.  
 
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/2.jpg" width="700"/>|
 |-|
@@ -235,8 +237,10 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 |-|
 |그림 3 - 주문 프로세스|
 
-각 주문 상태별 설명을 [이곳에](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/order-process.md#주문-프로세스) 
-정리해두었습니다.  
+<br/>
+
+
+
 
 <br/><br/>
 
