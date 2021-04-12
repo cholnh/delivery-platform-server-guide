@@ -354,6 +354,9 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 ### 이벤트 스토밍을 통한 마이크로서비스 도출
 앞에서 정의한 요구사항을 기반으로 '이벤트 스토밍'을 통해 비지니스 흐름을 파악하고 
 바운디드 컨텍스트 식별을 통해 마이크로 서비스 후보를 찾아내고 서비스 간의 관계를 정의해 보겠습니다.  
+
+<br/>
+
 (DDD 개념은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/ddd-strategy.md#ddd-간단-소개)에서 자세하게 설명하겠습니다)  
 (이벤트 스토밍은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/event-storming.md#이벤트-스토밍)에서 자세하게 설명하겠습니다)
 
