@@ -1,4 +1,4 @@
-# :truck: 배달 서비스 플랫폼 API 서버 가이드
+# 배달 서비스 플랫폼 API 서버 가이드
 
 <br/><br/>
 
@@ -163,6 +163,12 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다.
 <br/><br/>
 
 ### 요구사항 정의
+위에서([:link:어떤걸 만들까?](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#어떤걸-만들까))
+
+
+<br/><br/>
+
+### 설계 전략
 
 
 
