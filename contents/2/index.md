@@ -19,15 +19,15 @@
 
 ## :memo: Table of Contents
 
-- [1. 다루는 내용](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/1/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
-- [2. 도메인 설계](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#truck-배달-서비스-플랫폼-api-서버-가이드) :point_left:
-- [3. 전략과 도구](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
-- [4. 시스템 설계](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/4/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
-- [5. 마일스톤](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/5/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
-- [6. 인프라 구현](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
-- [7. 서비스 구현](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/7/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
-- [8. 마무리](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/8/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
-- [9. 회고](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/9/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
+- [1. 다루는 내용](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/1/index.md#배달-서비스-플랫폼-api-서버-가이드)
+- [2. 도메인 설계](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#배달-서비스-플랫폼-api-서버-가이드) :point_left:
+- [3. 전략과 도구](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/index.md#배달-서비스-플랫폼-api-서버-가이드)
+- [4. 시스템 설계](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/4/index.md#배달-서비스-플랫폼-api-서버-가이드)
+- [5. 마일스톤](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/5/index.md#배달-서비스-플랫폼-api-서버-가이드)
+- [6. 인프라 구현](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/index.md#배달-서비스-플랫폼-api-서버-가이드)
+- [7. 서비스 구현](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/7/index.md#배달-서비스-플랫폼-api-서버-가이드)
+- [8. 마무리](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/8/index.md#배달-서비스-플랫폼-api-서버-가이드)
+- [9. 회고](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/9/index.md#배달-서비스-플랫폼-api-서버-가이드)
 
 <br/><br/>
 
@@ -124,7 +124,7 @@ API 서버 인터페이스 엔드 포인트는 URL 형식으로 제공되며 htt
 현시대의 플랫폼 사업은 민첩해야합니다.  
 다양하고 급변하는 시장의 요구에 따라 유연하고 민첩하게 적응할 수 있는 플랫폼을 만들어야 합니다.  
 매번 요구가 변경될 때마다 프로젝트를 갈아 엎고 다시 시작할까요?  
-프로젝트에는 [`다시 시작`](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#truck-배달-서비스-플랫폼-api-서버-가이드) 버튼이 없습니다.ㅎㅎ  
+프로젝트에는 [`다시 시작`](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#배달-서비스-플랫폼-api-서버-가이드) 버튼이 없습니다.ㅎㅎ  
 
 <br/>
 
@@ -163,7 +163,10 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다.
 <br/><br/>
 
 ### 요구사항 정의
-위에서([:link:어떤걸 만들까?](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#어떤걸-만들까))
+위에서([:link:어떤걸 만들까?](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#어떤걸-만들까)) 
+정한 배달 플랫폼 서비스는 다음과 같은 기능 요건을 가지고 있습니다.  
+- 사용자 관리 및 로그인
+    + 사용자를 등록한다. 등록 시 사내 HR
 
 
 <br/><br/>
