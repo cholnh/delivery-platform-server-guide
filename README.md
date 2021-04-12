@@ -28,3 +28,15 @@
 - [7. 서비스 구현](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/7/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
 - [8. 마무리](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/8/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
 - [9. 회고](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/9/index.md#truck-배달-서비스-플랫폼-api-서버-가이드)
+
+<br/><br/>
+
+
+
+## 참고 
+
+- 도메인 주도 설계로 시작하는 마이크로서비스 개발 (한정헌, 유해식, 최은정, 이주영 저)
+- 테스트 주도 개발로 배우는 객체 지향 설계와 실천 (Steve Freeman, Nat Pryce 저)
+- Clean Code (Robert C. Martin 저)
+- Mastering Spring 5.0 (Ranga Rao Karanam 저)
+- JAVA 객체 지향 디자인 패턴 (정인상, 채흥석 저)
