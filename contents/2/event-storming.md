@@ -50,8 +50,13 @@
     
 ## :runner: 방식
 이벤트 스토밍은 현실 세계의 도메인을 다양한 의미의 스티커로 표현합니다.  
+(각 진행 순서와 스티커 색상은 프로젝트마다 적절히 변경해서 사용합니다)
 
 <br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-ex1.png" width="700"/>|
+|-|
+|스티커 색상별 유형|
 
 |유형|크기/색깔|설명|
 |-|-|-|
@@ -65,9 +70,9 @@
 |사용자 인터페이스|흰색|스케치 형태의 화면 레이아웃|
 |핫스팟|빨간색|의문, 질문, 미결정 사항|
 
+<br/><br/>
 
 이벤트 스토밍을 진행하는 순서는 다음과 같습니다.  
-(각 진행 순서와 스티커 색상은 프로젝트마다 조금씩 다를 수 있습니다)
 
 <br/>
 
@@ -124,7 +129,7 @@
 
 다음과 같은 흐름대로 시스템을 분석합니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-ex.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-ex2.png" width="700"/>|
 |-|
 |이벤트 스토밍의 개념|
 
