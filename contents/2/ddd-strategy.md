@@ -140,13 +140,13 @@ DDD 에서는 하나의 큰 도메인을 (전략적으로 중요한 것들을 �
 <br/>
 
 - 컨텍스트 맵  
-    컨텍스트 간의 매핑 관계를 표시한 다이어그램을 컨텍스트 맵이라 합니다.  
+    하나의 큰 도메인을 여러 개의 바운디드 컨텍스트로 식별하고 아들 간의 매핑 관계를 표시한 다이어그램을 컨텍스트 맵이라 합니다.  
     
     <br/>
     
     다양한 컨텍스트 매핑 패턴이 있습니다.
     
-    + 공유 커널  
+    + 공유 커널 (Shared Kernel)  
         바운디드 컨텍스트 사이에 공통적인 모델을 공유하는 관계 (공통 라이브러리 등)
         + 단점 : 공유 부분이 변경되면 여러 관련 컨텍스트에 영향을 미침  
         
@@ -154,4 +154,73 @@ DDD 에서는 하나의 큰 도메인을 (전략적으로 중요한 것들을 �
         |-|
         |그림 3 - 공유 커널 ([출처](https://engineering-skcc.github.io/microservice%20modeling/ddd-Srategic-design/))|
 
+    <br/>
+    
+    + 소비자와 공급자 (Customer-Supplier)  
+        + 공급자는 상류 Upstream(U), 소비자는 하류 Downstream(D) 로 표시
+        + 데이터 흐름은 상류에서 하류로 흐릅니다. (반대 흐름 불가)
+        + 공급자는 소비자가 원하는 기능을 제공합니다.
+        + (cf: 공급자가 소비자의 요구를 지원하지 못하는 경우에는 준수자(Confirmist) 패턴을 사용합니다)
         
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-4.png" width="500"/>|
+        |-|
+        |그림 4 - 소비자와 공급자 ([출처](https://engineering-skcc.github.io/microservice%20modeling/ddd-Srategic-design/))|
+        
+    <br/>
+    
+    + 충돌 방지 계층 (ACL; Anti-Corruption Layer)  
+        하류팀이 상류팀의 모델에 영향을 받을 때 하류 팀의 고유 모델을 지키기 위해 번역 계층을 만드는 것입니다.
+        + ACL 은 둘 사이 차이를 번역 (하류 모델의 독립성 유지)
+        + MSA 를 적용하는 새로운 시스템을 기존 레거시 시스템과 통합하기 위해 주로 사용  
+            (MSA 점진적 전환 방식에 많이 사용)
+        
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-5.png" width="500"/>|
+        |-|
+        |그림 5 - 충돌 방지 계층 ([출처](https://engineering-skcc.github.io/microservice%20modeling/ddd-Srategic-design/))|
+        
+    <br/>
+    
+    + 공개 호스트 서비스 (OHS; Open Host Service)  
+        바운디드 컨텍스트에 대한 접근을 제공하는 프로토콜이나 인터페이스를 정의합니다.  
+        + 상위 컨텍스트에서 제공하는 기능을 용이하게 사용할 수 있도록 공개 (공유된 API 등)
+        
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-6.png" width="500"/>|
+        |-|
+        |그림 6 - 공개 호스트 서비스 ([출처](https://engineering-skcc.github.io/microservice%20modeling/ddd-Srategic-design/))|
+        
+    <br/>
+    
+    + 발행된 언어 (PL; Published Language)  
+        하류 컨텍스트가 상류에서 제공하는 기능을 사용하게 하기 위한 간단한 사용과 번역을 가능케 하는 문서화된 정보 교환 언어입니다.
+        + XML, JSON 스키마로 표현
+        + 주로 공개 호스트 서비스와 짝을 이뤄 사용
+        
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-7.png" width="500"/>|
+        |-|
+        |그림 7 - 발행된 언어 ([출처](https://engineering-skcc.github.io/microservice%20modeling/ddd-Srategic-design/))|
+        
+    <br/><br/>
+    
+    컨텍스트 맵의 예제입니다.  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-8.png" width="500"/>|
+    |-|
+    |그림 8 - 중요도에 따른 컨텍스트 매핑 관계|
+    
+    + 핵심 서브도메인이 동작하기 위해 지원 서브도메인과 일반 서브도메인의 정보를 활용합니다.
+    + 지원 서브도메인 역시 동작을 위해 일반 서브 도메인을 활용합니다.
+    + 세 컨텍스트가 공급자/소비자 관계를 맺고 있습니다.
+    + 일반 서브도메인은 공개된 프로토콜/인터페이스(OHS), 발행된 언어(PL)를 제공합니다.
+    + 핵심 서브도메인은 받은 정보를 번역(ACL)하여 사용합니다. 
+    
+    <br/>
+    
+    조금더 구체적으로 매핑 유형을 표현해 보겠습니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-9.png" width="900"/>|
+    |-|
+    |그림 9 - 컨텍스트 맵 사례|
+    
+    + 회원, 제품, 주문, 배달, 배달지 컨텍스트 매핑 관계입니다.
+    + 공급자 컨텍스트들은 HTTP/JSON 기반의 REST API 를 통해 동기 통신의 서비스를 제공합니다.
+    + 점선으로 표시된 비동기 이벤트 메시지 발행을 볼 수 있습니다. 
