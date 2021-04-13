@@ -102,3 +102,11 @@
     이벤트 발생 시 타 영역의 커멘드를 트리거하는 정책을 정의합니다.
     + 보라색 스티커
     + 이름, 이메일 validation, 주민 번호 뒷자리 마스킹 검사 등 이벤트 발생 시 타 영역 커멘드 발동
+    
+<br/><br/>
+
+다음과 같은 흐름대로 시스템을 분석합니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-ex.png" width="700"/>|
+|-|
+|이벤트 스토밍의 개념|
