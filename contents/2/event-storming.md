@@ -1,5 +1,9 @@
 # 이벤트 스토밍
 
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-intro.png" width="700"/>|
+|-|
+|이벤트 스토밍 ([출처](https://engineering-skcc.github.io/microservice%20modeling/Event-Storming/))|
+
 <br/><br/>
 
 
