@@ -149,7 +149,8 @@ DDD 에서는 하나의 큰 도메인을 (전략적으로 중요한 것들을 �
     + 공유 커널  
         바운디드 컨텍스트 사이에 공통적인 모델을 공유하는 관계 (공통 라이브러리 등)
         + 단점 : 공유 부분이 변경되면 여러 관련 컨텍스트에 영향을 미침  
-        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-2.png" width="500"/>|
+        
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-3.png" width="500"/>|
         |-|
         |그림 3 - 공유 커널 ([출처](https://engineering-skcc.github.io/microservice%20modeling/ddd-Srategic-design/))|
 
