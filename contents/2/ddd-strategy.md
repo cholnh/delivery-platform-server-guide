@@ -217,7 +217,7 @@ DDD 에서는 하나의 큰 도메인을 (전략적으로 중요한 것들을 �
     
     조금더 구체적으로 매핑 유형을 표현해 보겠습니다.
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-9.png" width="900"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-strategy-ex.png" width="900"/>|
     |-|
     |그림 9 - 컨텍스트 맵 사례|
     
