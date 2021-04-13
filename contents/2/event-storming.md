@@ -54,7 +54,7 @@
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-ex1.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-ex1.png" width="500"/>|
 |-|
 |스티커 색상별 유형|
 
