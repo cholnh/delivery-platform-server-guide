@@ -110,3 +110,5 @@
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/event-storming-ex.png" width="700"/>|
 |-|
 |이벤트 스토밍의 개념|
+
+<br/>
