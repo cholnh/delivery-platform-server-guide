@@ -299,7 +299,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
     + 사용자는 서브 제품 이미지를 요청할 수 있습니다.
     + 사용자는 평가 이미지를 요청할 수 있습니다.
 
-<br/>
+<br/> 
 
 - 쿠폰 관리
     + 고객은 자신이 소유한 쿠폰/쿠폰 사용 내역을 조회할 수 있습니다.
@@ -360,7 +360,27 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 (DDD 개념은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/ddd-strategy.md#ddd-간단-소개)에서 자세하게 설명하겠습니다)  
 (이벤트 스토밍은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/event-storming.md#이벤트-스토밍)에서 자세하게 설명하겠습니다)
 
+<br/><br/>
+
+아래는 배달 서비스의 업무 흐름입니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-my.png" width="700"/>|
+|-|
+|그림 4 - 고객 정보 조회 프로세스|
+
 <br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-store.png" width="700"/>|
+|-|
+|그림 5 - 고객 정보 조회 프로세스|
+
+<br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-order.png" width="1100"/>|
+|-|
+|그림 6 - 주문 프로세스|
+
+<br/><br/>
 
 위에서 정의한 요구사항을 다음과 같이 나눴습니다.  
 - 사용자 관리 및 로그인
