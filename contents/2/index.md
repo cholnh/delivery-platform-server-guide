@@ -364,25 +364,25 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 아래는 배달 서비스의 업무 흐름입니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-my.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-my.png" width="600"/>|
 |-|
 |그림 4 - 고객 정보 조회 프로세스|
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-store.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-store.png" width="600"/>|
 |-|
 |그림 5 - 고객 정보 조회 프로세스|
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-billing.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-billing.png" width="1000"/>|
 |-|
 |그림 6 - 결제 프로세스|
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-delivery.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-delivery.png" width="1000"/>|
 |-|
 |그림 6 - 배달 프로세스|
 
