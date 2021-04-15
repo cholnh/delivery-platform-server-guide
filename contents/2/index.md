@@ -360,23 +360,23 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 (DDD 개념은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/ddd-strategy.md#ddd-간단-소개)에서 자세하게 설명하겠습니다)  
 (이벤트 스토밍은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/event-storming.md#이벤트-스토밍)에서 자세하게 설명하겠습니다)
 
-<br/><br/>
+<br/>
 
 아래는 배달 서비스의 업무 흐름입니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-my.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-my.png" width="500"/>|
 |-|
 |그림 4 - 고객 정보 조회 프로세스|
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-store.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-store.png" width="500"/>|
 |-|
 |그림 5 - 고객 정보 조회 프로세스|
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-order.png" width="1100"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-order.png" width="1300"/>|
 |-|
 |그림 6 - 주문 프로세스|
 
