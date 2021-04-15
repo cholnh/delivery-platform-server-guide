@@ -376,9 +376,15 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-order.png" width="1300"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-billing.png" width="700"/>|
 |-|
-|그림 6 - 주문 프로세스|
+|그림 6 - 결제 프로세스|
+
+<br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-process-delivery.png" width="700"/>|
+|-|
+|그림 6 - 배달 프로세스|
 
 <br/><br/>
 
