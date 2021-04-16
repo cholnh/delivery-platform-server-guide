@@ -483,7 +483,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
     + 또한 회원가입 보다는 로그인이 빈번하게 수행되므로 두 컨텍스트로 분리하였습니다.
     + 분리시, 로그인 정보와 회원정보의 일관성이 유지되어야 하므로 회원 등록/삭제 이벤트를 비동기로 전달합니다.
     
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-user-1.png" width="1000"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-user.png" width="1000"/>|
 |-|
 |사용자 관리 및 로그인 컨텍스트 분리|
 
