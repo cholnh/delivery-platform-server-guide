@@ -585,7 +585,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 - 알림
 - 이미지
 
-<br/>
+<br/> 
 
 이처럼 바운디드 컨텍스트를 도출한 뒤 이전에 도출했던, 외부 시스템과의 연관관계, 정책 등을 살펴보면 컨텍스트ㅇ 간 호출 관계를 정리할 수 있습니다. 
 
@@ -593,7 +593,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 다음은 도출된 컨텍스트와 컨텍스트 간의 호출 관계를 나타낸 다이어그램입니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-diagram.png" width="1000"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-diagram-1.png" width="1000"/>|
 |-|
 |컨텍스트 간의 호출 관계|
 
