@@ -561,7 +561,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 8. 프로모션 관리
     + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
     
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-point-coupon.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-promotion.png" width="800"/>|
 |-|
 |프로모션 관리 컨텍스트 분리|
 
