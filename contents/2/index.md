@@ -402,7 +402,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 - 배달지/상세 배달지 관리    
 - 배달 관리
 - 알림/이미지 관리
-- 쿠폰/포인트 관리
+- 프로모션 관리
 
 이것은 비즈니스 해결을 위한 문제영역 입니다. DDD 에서는 문제 영역을 서브도메인이라 부릅니다.  
 이제 서브도메인별로 이벤트 스토밍을 진행하겠습니다.  
@@ -465,13 +465,109 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 <br/><br/>
 
-8. 쿠폰/포인트 관리
+8. 프로모션 관리
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-point-coupon.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-promotion.png" width="900"/>|
 |-|
-|쿠폰/포인트 관리 서브도메인에 대한 이벤트 스토밍 결과|
+|프로모션 관리 서브도메인에 대한 이벤트 스토밍 결과|
 
 <br/><br/>
+
+### 바운디드 컨텍스트 식별
+이벤트 스토밍 결과를 보고 애그리거트 응집도를 고려하여 컨텍스트를 구별해 보겠습니다.  
+
+<br/>
+
+1. 사용자 관리 및 로그인
+    + 로그인은 회원이 시스템을 사용하는 시점(로그인 상태)에 발생하는 정보라는 점에서 사용자 정보와 개념상 차이가 있습니다.
+    + 또한 회원가입 보다는 로그인이 빈번하게 수행되므로 두 컨텍스트로 분리하였습니다.
+    + 분리시, 로그인 정보와 회원정보의 일관성이 유지되어야 하므로 회원 등록/삭제 이벤트를 비동기로 전달합니다.
+    
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-user-1.png" width="1000"/>|
+|-|
+|사용자 관리 및 로그인 컨텍스트 분리|
+
+<br/><br/>
+
+2. 업체 관리
+    + 정산은 업체 관리 맥락과 다르므로 분리하였습니다.
+    + 업체 평가 또한 제품 평가 컨텍스트와 묶어서 분리하였습니다.
+    + 업체 검색은 업주/관리자가 아닌 사용자가 접근하는 정보라는 점에서 맥락이 다릅니다.  
+        조회(Query)와 생성, 변경(Command)을 분리하는 CQRS 패턴을 활용하여 카탈로그라는 조회를 전담하는 컨텍스트로 분리하였습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-store.png" width="1000"/>|
+|-|
+|업체 관리 컨텍스트 분리|
+
+<br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-review.png" width="500"/>|
+|-|
+|평가 컨텍스트 분리|
+
+<br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-catalog.png" width="500"/>|
+|-|
+|카탈로그 컨텍스트 분리|
+
+<br/><br/>
+
+3. 제품/서브 제품 관리
+    + 제품조회 및 제품 평가를 분리하였습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-product.png" width="1000"/>|
+|-|
+|제품/서브 제품 관리 컨텍스트 분리|
+
+<br/><br/>
+
+4. 구매 관리
+    + 결제 정보와 주문 정보는 의미, 책임범위가 다르므로 분리하였습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-order.png" width="1000"/>|
+|-|
+|구매 관리 컨텍스트 분리|
+
+<br/><br/>
+
+5. 배달지/상세 배달지 관리
+    + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-delivery-site.png" width="600"/>|
+|-|
+|배달지/상세 배달지 관리 서브도메인에 대한 이벤트 스토밍 결과|
+
+<br/><br/>
+
+6. 배달 관리
+    + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
+    
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-delivery.png" width="1000"/>|
+|-|
+|배달 관리서브도메인에 대한 이벤트 스토밍 결과|
+
+<br/><br/>
+
+7. 알림/이미지 관리
+    + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
+    
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-util.png" width="600"/>|
+|-|
+|알림/이미지 관리 서브도메인에 대한 이벤트 스토밍 결과|
+
+<br/><br/>
+
+8. 프로모션 관리
+    + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
+    
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-point-coupon.png" width="800"/>|
+|-|
+|프로모션 관리 서브도메인에 대한 이벤트 스토밍 결과|
+
+<br/><br/>
+
+
 
 ### 외부 아키텍처 정의
 
