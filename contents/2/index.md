@@ -501,13 +501,13 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-review.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-review.png" width="400"/>|
 |-|
 |평가 컨텍스트 분리|
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-catalog.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-catalog.png" width="400"/>|
 |-|
 |카탈로그 컨텍스트 분리|
 
