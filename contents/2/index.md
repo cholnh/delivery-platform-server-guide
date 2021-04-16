@@ -534,7 +534,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 5. 배달지/상세 배달지 관리
     + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-delivery-site.png" width="600"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-delivery-site.png" width="600"/>|
 |-|
 |배달지/상세 배달지 관리 컨텍스트 분리|
 
@@ -543,16 +543,16 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 6. 배달 관리
     + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
     
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-delivery.png" width="1000"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-delivery.png" width="1000"/>|
 |-|
 |배달 관리 서브도메인에 대한 이벤트 스토밍 결과|
-
+ㄹ
 <br/><br/>
 
 7. 알림/이미지 관리
     + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
     
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-util.png" width="600"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-util.png" width="600"/>|
 |-|
 |알림/이미지 관리 컨텍스트 분리|
 
@@ -561,7 +561,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 8. 프로모션 관리
     + 특이점이 없어 서브도메인 그대로 바운디드 컨텍스트로 식별하였습니다.
     
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-point-coupon.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-point-coupon.png" width="800"/>|
 |-|
 |프로모션 관리 컨텍스트 분리|
 
@@ -572,16 +572,32 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 - 로그인
 - 사용자
+- 업체
+- 제품
+- 카탈로그
+- 정산
+- 평가
+- 프로모션
+- 주문
+- 결제
+- 배달
+- 배달지
+- 알림
+- 이미지
 
 <br/>
 
-이처럼 바운디드 컨텍스트를 도출한 뒤 이전에 도출했던, 외부 시스템과의 연관관계, 정책 등을 살펴보면 컨텍스트 간 호출 관계를 정리할 수 있습니다. 
+이처럼 바운디드 컨텍스트를 도출한 뒤 이전에 도출했던, 외부 시스템과의 연관관계, 정책 등을 살펴보면 컨텍스트ㅇ 간 호출 관계를 정리할 수 있습니다. 
 
 <br/>
 
 다음은 도출된 컨텍스트와 컨텍스트 간의 호출 관계를 나타낸 다이어그램입니다.  
 
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-diagram.png" width="1000"/>|
+|-|
+|컨텍스트 간의 호출 관계|
 
+<br/>
 
 
 ### 외부 아키텍처 정의
