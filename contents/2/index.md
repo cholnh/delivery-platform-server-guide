@@ -413,7 +413,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-user.png" width="1000"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-user-1.png" width="1000"/>|
 |-|
 |사용자 관리 및 로그인 서브도메인에 대한 이벤트 스토밍 결과|
 
