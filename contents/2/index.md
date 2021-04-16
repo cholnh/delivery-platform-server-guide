@@ -411,65 +411,63 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 1. 사용자 관리 및 로그인
 
-<br/>
-
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-user-1.png" width="1000"/>|
 |-|
 |사용자 관리 및 로그인 서브도메인에 대한 이벤트 스토밍 결과|
 
-2. 업체 관리
+<br/><br/>
 
-<br/>
+2. 업체 관리
 
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-store.png" width="1000"/>|
 |-|
 |업체 관리 서브도메인에 대한 이벤트 스토밍 결과|
 
-3. 제품/서브 제품 관리
+<br/><br/>
 
-<br/>
+3. 제품/서브 제품 관리
 
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-product.png" width="1000"/>|
 |-|
 |제품/서브 제품 관리 서브도메인에 대한 이벤트 스토밍 결과|
 
-4. 구매 관리
+<br/><br/>
 
-<br/>
+4. 구매 관리
 
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-order.png" width="1000"/>|
 |-|
 |구매 관리 서브도메인에 대한 이벤트 스토밍 결과|
 
+<br/><br/>
+
 5. 배달지/상세 배달지 관리
 
-<br/>
-
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-delivery-site.png" width="1000"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-delivery-site.png" width="600"/>|
 |-|
 |배달지/상세 배달지 관리 서브도메인에 대한 이벤트 스토밍 결과|
-  
-6. 배달 관리
 
-<br/>
+<br/><br/>
+
+6. 배달 관리
 
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-delivery.png" width="1000"/>|
 |-|
 |배달 관리서브도메인에 대한 이벤트 스토밍 결과|
 
-7. 알림/이미지 관리
+<br/><br/>
 
-<br/>
+7. 알림/이미지 관리
 
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-util.png" width="600"/>|
 |-|
 |알림/이미지 관리 서브도메인에 대한 이벤트 스토밍 결과|
 
+<br/><br/>
+
 8. 쿠폰/포인트 관리
 
-<br/>
-
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-point-coupon.png" width="1000"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-es-point-coupon.png" width="700"/>|
 |-|
 |쿠폰/포인트 관리 서브도메인에 대한 이벤트 스토밍 결과|
 
