@@ -24,7 +24,7 @@
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-arch" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-arch.png" width="700"/>|
 |-|
 |그림 1 - 헥사고날 아키텍처의 포트와 어댑터|
 
