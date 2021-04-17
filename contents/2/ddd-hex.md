@@ -24,7 +24,7 @@
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-arch.png" width="900"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-arch-1.png" width="900"/>|
 |-|
 |그림 1 - 헥사고날 아키텍처의 포트와 어댑터|
 
@@ -46,6 +46,6 @@
     + 커맨드 핸들러
     + 이벤트 메시지 구독 핸들러 등
 - 아웃바운드 어댑터 종류 예시
-    + DAO
+    + DAO (Jpa, MySQL, NoSQL 등등)
     + 이벤트 메시지 발행 클래스
     + 외부 서비스 호출 프록시 등
