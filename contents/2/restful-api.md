@@ -86,12 +86,14 @@ RESTful 하다는 것은 다음을 충족해야 합니다.
 - Stateless (무상태)  
     Http 프로토콜은 Stateless 프로토콜 이므로, REST 역시 Stateless 성격을 갖습니다.  
     (Stateless 란 Client 상태(State)를 Server 측에 저장/관리 하지 않음을 뜻합니다)
+    
         + 세션, 쿠키와 같은 context 정보를 신경쓰지 않아도 되므로 구현이 단순해집니다.
         
 <br/>
 
 - Cacheable  
     (웹 Http 인프라를 그대로 사용할 수 있어서) Http 캐시 활용이 가능합니다.
+    
         + HTTP 프로토콜 표준에서 사용하는 `Last-Modified` 태그나 `E-Tag`를 이용하면 캐싱 구현이 가능합니다.
 
 <br/>
