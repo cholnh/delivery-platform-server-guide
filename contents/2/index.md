@@ -62,7 +62,7 @@ API 서버 인터페이스 엔드 포인트는 URL 형식으로 제공되며 htt
 |DELETE|`https://api.domain.com/v1/products/1`|1번 제품정보 삭제|
 
 각각의 HTTP 메서드에 따라 다른 행위가 요청됩니다.  
-(마이크로 서비스 API 설계에 대한 내용은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/restful-api.md#restful-api-설계)에서 자세하게 다루겠습니다)  
+(마이크로 서비스 REST API 설계에 대한 내용은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/restful-api.md#restful-api-설계)에서 자세하게 다루겠습니다)  
 
 <br/>
 
