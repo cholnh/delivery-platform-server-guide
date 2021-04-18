@@ -728,6 +728,12 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 |-|
 |이벤트 스토밍 결과와 헥사고날 아키텍처 구성요소 매핑|
 
+<br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-mapping2.png" width="1100"/>|
+|-|
+|이벤트 스토밍 결과와 헥사고날 아키텍처 구성요소 매핑|
+
 <br/><br/>
 
 
