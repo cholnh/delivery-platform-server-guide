@@ -66,7 +66,7 @@
     도메인 모델을 중심으로 모델링이 수행됩니다.  
     서비스가 모든 로직을 처리하지 않고 비즈니스 로직이 도메인 모델로 위임되어 적절히 분산됩니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-domain-1.png" width="900"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-domain-2.png" width="900"/>|
 |-|
 |그림 2 - 도메인 모델 형태의 헥사고날 구조|
 
