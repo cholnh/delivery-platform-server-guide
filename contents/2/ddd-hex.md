@@ -137,13 +137,13 @@ DDD 전술적 설계는 객체들 각각의 역할에 따른 유형을 정의하
     + 보통 바운디드 컨텍스트를 마이크로 서비스로 식별하게 되는데, 애그리거트 또한 별도의 마이크로 서비스 후보가 될 수 있습니다.
     + 다른 애그리거트 사이 일관성이 필요할 시, 도메인 이벤트를 통한 결과적 일관성을 사용하여 다른 애그리거트를 갱신한다.
     
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-aggregate.png" width="900"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-aggregate.png" width="700"/>|
 |-|
 |그림 5 - 식별자를 통한 애그리거트 간 참조|
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-aggregate2.png" width="900"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-aggregate2.png" width="700"/>|
 |-|
 |그림 6 - 결과적 일관성을 통한 애그리거트 간 갱신|
 
