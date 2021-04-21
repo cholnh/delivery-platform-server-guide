@@ -742,8 +742,8 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 
 <br/>
 
-다음장은 [시스템 설계](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/index.md#배달-서비스-플랫폼-api-서버-가이드)
-를 통해 외부 아키텍처와 내부 아키텍처를 정의해 보겠습니다.
+[다음장](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/index.md#배달-서비스-플랫폼-api-서버-가이드)
+은 시스템 설계를 통해 외부 아키텍처와 내부 아키텍처를 정의해 보겠습니다.
 
 <br/><br/>
 
