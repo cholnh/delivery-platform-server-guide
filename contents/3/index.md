@@ -47,7 +47,7 @@
 우선 마이크로 서비스 아키텍처의 예시입니다.  
 (각 구성요소들은 변경/대체 가능합니다)
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/outer-arch-1.png" width="1100"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/outer-arch-2.png" width="1100"/>|
 |-|
 |그림 1 - 마이크로 서비스 외부 아키텍처 구조|
 
