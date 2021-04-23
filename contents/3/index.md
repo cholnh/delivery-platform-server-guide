@@ -87,7 +87,96 @@ MSA 에도 이러한 설계 패턴들이 존재합니다.
 
 <br/>
 
- 
+마이크로 서비스 패턴 종류는 다음과 같습니다.
+
+> 패턴을 편하게 구현하도록 도와주는 여러 오픈소스들을 아래에 같이 적어놨습니다.  
+> 넷플릭스 OSS 는 MSA 관련 패턴들을 정형화하여 오픈소스화 한 프로젝트입니다.  
+> 하지만 넷플릭스 OSS 또한 각 패턴별 러닝커브가 존재하고 알아야 할 종류들이 많습니다.  
+> 보통 대규모 시스템을 운영하는 기업들은 쿠버네티스를 사용하여 여러 패턴에 쓰이는 기술들을 안정적이고 효율적으로 운영합니다.  
+
+<br/>
+
+- 라우팅 패턴
+    1. 서비스 디스커버리 패턴
+        + 스프링 클라우드 + 넷플릭스 유레카
+        + 쿠버네티스
+    2. 서비스 라우팅 패턴
+        + 스프링 클라우드 + 넷플릭스 주울
+        + 쿠버네티스
+          
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-routing-pattern.jpg" width="700"/>|
+|-|
+|그림 1 - 라우팅 패턴|
+
+<br/>
+
+- 회복성 패턴
+    1. 클라이언트 부하 분산
+        + 스프링 클라우드 + 넷플릭스 리본
+        + 쿠버네티스
+    2. 회로차단기 패턴
+        + 스프링 클라우드 + 넷플릭스 히스트릭스
+    3. 폴백 패턴
+        + 스프링 클라우드 + 넷플릭스 히스트릭스
+    4. 벌크 헤드 패턴
+        + 스프링 클라우드 + 넷플릭스 히스트릭스
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-mediation-pattern.jpg" width="700"/>|
+|-|
+|그림 2 - 회복성 패턴|
+
+<br/>
+
+- 보안 패턴
+    + 스프링 클라우드 시큐리티
+    + OAuth2, JWT
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-security-pattern.jpg" width="700"/>|
+|-|
+|그림 3 - 보안 패턴|
+
+<br/>
+
+- 로그 패턴
+    + 스프링 클라우드
+    + 슬루스
+    + 페이퍼 트레일
+    + 집킨
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-log-pattern.jpg" width="700"/>|
+|-|
+|그림 4 - 로그 패턴|
+
+<br/>
+
+- 빌드/배포 패턴
+    1. 지속적 통합(CI)
+        + Travis CI
+        + 쿠버네티스
+    2. 코드형 인프라스트럭처 (IaC)
+        + 도커
+    3. 불변서버
+        + 도커
+    4. 피닉스서버
+        + Travis CI
+        + 도커
+        
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-deploy-pattern.jpg" width="700"/>|
+|-|
+|그림 5 - 빌드/배포 패턴|
+
+<br/>
+
+- 개발 패턴
+    1. 핵심 마이크로서비스 패턴
+        + 스프링 부트
+    2. 구성 관리
+        + 스프링 클라우드 컨피그
+    3. 비동기 메시징
+        + 스프링 클라우드 스트림
+
+<br/>
+
 
 
 
