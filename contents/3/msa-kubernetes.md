@@ -115,7 +115,7 @@ spec:                     # 리소스 상세 스팩 정의
 
 <br/><br/>
    
-**:grey_question: Why 여러 컨테이너를 묶어 하나의 Pod 로 배포할까요 ?**  
+**:question: Why 여러 컨테이너를 묶어 하나의 Pod 로 배포할까요 ?**  
 Pod 는 다음과 같은 특성이 있습니다.  
 
 <br/>
@@ -190,7 +190,7 @@ spec:
 
 <br/><br/>
 
-**:grey_question: Why 로드벨런서가 아니고 Service 인가**
+**:question: Why 로드벨런서가 아니고 Service 인가**
 
 <br/>
 
