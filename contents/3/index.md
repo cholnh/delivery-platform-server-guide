@@ -176,7 +176,11 @@ MSA 에도 이러한 설계 패턴들이 존재합니다.
         + 스프링 클라우드 컨피그
     3. 비동기 메시징
         + 스프링 클라우드 스트림
+        
+<br/>
 
+각 패턴에 관한 자세한 설명은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-pattern.md#MSA-패턴)에서 확인해주세요. 
+        
 <br/><br/>
 
 ### 내부 아키텍처 정의
