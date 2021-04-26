@@ -26,9 +26,9 @@
 
 도커에서 가장 중요한 개념은 컨테이너와 함께 이미지라는 개념입니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-docker.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/msa-pattern-docker.png" width="500"/>|
 |-|
-|그림 2 - 컨테이너 이미지 레이어|
+|컨테이너 이미지 레이어|
 
 <br/>
 
@@ -69,3 +69,22 @@
 <br/><br/>
 
 ## 도커 설치
+도커는 리눅스 컨테이너 기술이므로 macOS 또는 윈도우에 설치할 경우 가상머신에 설치가 됩니다.  
+
+<br/>
+
+각 개발 환경에 따른 설치를 진행하시면 됩니다.
+
+- [윈도우 설치](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+- [macOS 설치](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
+- [리눅스 설치](https://hub.docker.com/search?q=&type=edition&offering=community&operating_system=linux)
+
+<br/>
+
+도커가 설치됩니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/gcp-docker-1.png" width="500"/>|
+|-|
+|도커 설치중|
+
+<br/>
