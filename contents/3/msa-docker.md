@@ -162,14 +162,43 @@
     도커 파일을 빌드하면 이미지가 생성됩니다.  
     아래와 같이 콘솔에 입력합니다.
     
-    <br/>
+    `docker build -t hellobuild:0.1 .`
     
-    `docker build -t mybuild:0.1 .`
+    + `-t` 옵션은 생성될 이미지의 이름을 지정합니다.
+    + `:0.1` 은 태그 버전을 지정합니다.
+    + `.` 은 현재 디렉토리를 의미합니다. (현 디렉토리의 Dockerfile 을 찾아 build 합니다)
     
-    <br/>
+    <br/><br/>
     
+    아래와 같이 빌드가 진행됩니다.
     
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-build.png" width="500"/>|
+    |-|
+    |도커 파일 빌드|
     
+    <br/><br/>
+    
+    `docker images` 를 입력해보면 이미지가 성공적으로 생성되어 등록된 것을 볼 수 있습니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-build.png" width="500"/>|
+    |-|
+    |도커 파일 빌드|
+    
+<br/><br/>
+
+3. 도커 이미지 실행  
+    빌드한 이미지를 실행시켜 보겠습니다.  
+    아래와 같이 콘솔에 입력합니다.
+    
+    `docker run hellobuild:0.1` 
+    
+    <br/><br/>
+    
+    `echo` 명령어가 실행되는 모습을 볼 수 있습니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-run.png" width="500"/>|
+    |-|
+    |도커 이미지 실행|
     
 <br/><br/>
 
