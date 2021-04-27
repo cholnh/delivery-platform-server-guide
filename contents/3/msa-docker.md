@@ -90,7 +90,7 @@
 > 리눅스의 경우 도커를 실행하기 위한 kernel 버전은 3.10.x 이상입니다.  
 > (ubuntu 14.04 이상)
 
-<br/>
+<br/><br/>
 
 [도커 허브](https://hub.docker.com/)는 도커 이미지를 저장하는 클라우드입니다.  
 회원가입/로그인을 합니다.
@@ -99,7 +99,7 @@
 |-|
 |도커 허브 로그인|
 
-<br/>
+<br/><br/>
 
 `Create Repository` 버튼을 눌러 이미지를 저장할 Repository 를 만듭니다.
 
@@ -107,7 +107,7 @@
 |-|
 |도커 허브 저장소|
 
-<br/>
+<br/><br/>
 
 적당한 Repository 이름과 Visibility(공개/비공개) 를 선택한 뒤 `Create` 버튼을 눌러 Repository 를 생성합니다.
 
@@ -115,23 +115,23 @@
 |-|
 |도커 허브 저장소|
 
-<br/>
+<br/><br/>
 
 도커 설치가 마무리 되었다면 간단한 도커 파일을 만들어 도커 허브에 푸시 해보겠습니다.  
 도커 파일은 컨테이너에 설치해야 하는 패키지, 소스코드, 명령어, 환경변수 설정 등을 기록한 하나의 파일입니다.  
 매번 반복되는 과정을 단순하게 간소화 시켜줍니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-repo-create.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-file-process.png" width="500"/>|
 |-|
 |이미지 출처 : https://data-newbie.tistory.com/516|
 
-<br/>
+<br/><br/>
 
 1. 도커 파일 생성  
     (윈도우의 경우) 빈 file 을 열거나  
     (리눅스의 경우) vim 이나 cat 을 통해 도커 파일을 작성합니다.  
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-file-ex.png" width="300"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-file-ex.png" width="500"/>|
     |-|
     |윈도우 도커 파일 예제|
         
@@ -148,10 +148,14 @@
         docker image 를 빌드할 때 실행되는 것이 아니라 docker container 가 시작될 때 실행됩니다.  
         주로 docker image 로 빌드된 application 을 실행할 때 쓰입니다.
     
+    도커 파일 명령어는 [아래](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-docker.md#자주쓰는-도커-파일-명령어)에서 자세하게 다뤄보겠습니다.
+    
 <br/>
 
 2. 도커 파일 빌드  
     도커 파일을 빌드하면 이미지가 생성됩니다.
     
 
+
+### 자주쓰는 도커 파일 명령어
 
