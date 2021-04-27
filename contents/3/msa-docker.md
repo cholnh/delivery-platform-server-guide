@@ -131,16 +131,22 @@
     (윈도우의 경우) 빈 file 을 열거나  
     (리눅스의 경우) vim 이나 cat 을 통해 도커 파일을 작성합니다.  
     
+    <br/>
+    
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-file-ex.png" width="500"/>|
     |-|
     |윈도우 도커 파일 예제|
-        
+    
+    <br/>
+    
     ```
     ~ $ cat > Dockerfile <<EOF
     > FROM busybox
     > CMD echo "Hello world! This is my first Docker image."
     > EOF
     ```
+    
+    <br/>
     
     - `FROM busybox` : busybox 를 base image 로 지정하겠다는 명령어 입니다.   
         busybox 는 여러 유닉스 standard utilities 도구들을 담아놓은 실행 파일입니다.
@@ -153,7 +159,15 @@
 <br/>
 
 2. 도커 파일 빌드  
-    도커 파일을 빌드하면 이미지가 생성됩니다.
+    도커 파일을 빌드하면 이미지가 생성됩니다.  
+    아래와 같이 콘솔에 입력합니다.
+    
+    <br/>
+    
+    `docker build -t mybuild:0.1 .`
+    
+    <br/>
+    
     
     
     
