@@ -131,25 +131,21 @@
     (윈도우의 경우) 빈 file 을 열거나  
     (리눅스의 경우) vim 이나 cat 을 통해 도커 파일을 작성합니다.  
     
-    <br/>
+    + 윈도우 docker file  
     
-    윈도우 docker file
+        ```dockerfile
+        FROM busybox
+        CMD echo "Hello world! This is my first Docker image."
+        ```
     
-    ```dockerfile
-    FROM busybox
-    CMD echo "Hello world! This is my first Docker image."
-    ```
+    + 리눅스/macOS docker file  
     
-    <br/>
-    
-    리눅스/macOS docker file
-    
-    ```
-    ~ $ cat > Dockerfile <<EOF
-    > FROM busybox
-    > CMD echo "Hello world! This is my first Docker image."
-    > EOF
-    ```
+        ```
+        ~ $ cat > Dockerfile <<EOF
+        > FROM busybox
+        > CMD echo "Hello world! This is my first Docker image."
+        > EOF
+        ```
     
     <br/>
     
@@ -173,7 +169,7 @@
     + `:0.1` 은 태그 버전을 지정합니다.
     + `.` 은 현재 디렉토리를 의미합니다. (현 디렉토리의 Dockerfile 을 찾아 build 합니다)
     
-    <br/><br/>
+    <br/>
     
     아래와 같이 빌드가 진행됩니다.
     
@@ -181,7 +177,7 @@
     |-|
     |도커 파일 빌드|
     
-    <br/><br/>
+    <br/>
     
     `docker images` 를 입력해보면 이미지가 성공적으로 생성되어 등록된 것을 볼 수 있습니다.
     
@@ -189,7 +185,7 @@
     |-|
     |도커 파일 빌드|
     
-<br/><br/>
+<br/>
 
 3. 도커 이미지 실행  
     빌드한 이미지를 실행시켜 보겠습니다.  
@@ -197,7 +193,7 @@
     
     `docker run hellobuild:0.1` 
     
-    <br/><br/>
+    <br/>
     
     `echo` 명령어가 실행되는 모습을 볼 수 있습니다.
     
