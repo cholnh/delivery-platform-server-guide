@@ -133,11 +133,16 @@
     
     <br/>
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-file-ex.png" width="500"/>|
-    |-|
-    |윈도우 도커 파일 예제|
+    윈도우 docker file
+    
+    ```dockerfile
+    FROM busybox
+    CMD echo "Hello world! This is my first Docker image."
+    ```
     
     <br/>
+    
+    리눅스/macOS docker file
     
     ```
     ~ $ cat > Dockerfile <<EOF
