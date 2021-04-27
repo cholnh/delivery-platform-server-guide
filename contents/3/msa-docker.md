@@ -177,7 +177,7 @@
     
     아래와 같이 빌드가 진행됩니다.
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-build.png" width="500"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-build.png" width="700"/>|
     |-|
     |도커 파일 빌드|
     
@@ -185,7 +185,7 @@
     
     `docker images` 를 입력해보면 이미지가 성공적으로 생성되어 등록된 것을 볼 수 있습니다.
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-build.png" width="500"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/docker/docker-build.png" width="700"/>|
     |-|
     |도커 파일 빌드|
     
