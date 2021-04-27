@@ -155,7 +155,57 @@
 2. 도커 파일 빌드  
     도커 파일을 빌드하면 이미지가 생성됩니다.
     
-
+    
+    
+<br/><br/>
 
 ### 자주쓰는 도커 파일 명령어
 
+- `FROM`  
+    생성할 이미지의 베이스가 될 이미지를 뜻합니다.  
+    반드시 한번 이상 입력해야 합니다.  
+    베이스 이미지를 지정할 때는 OS와 버전까지 정확하게 지정해주는 것이 좋습니다.  
+    + `FROM ubuntu:16.04`
+    
+<br/>
+
+- `LABEL`  
+    이미지에 메타데이터를 추가합니다.  
+    추후 이 라벨을 통해 조건을 검색하여 원하는 컨테이너, 이미지 등을 쉽게 찾을 수 있습니다.  
+    + `LABEL "purpose"="test"`
+    
+<br/>
+
+- `RUN`  
+    이미지를 만들기 위해 컨테이너 내부에서 명령어를 실행합니다.  
+    주로 (apt-get, wget 과 같은)설치/업데이트에 사용되곤 합니다.  
+    여기서 주의할 점은 설치과정에서 별도의 입력이 불가능하기 때문에 `-y` 와 같은 입력을 붙여줘야 합니다.  
+    + `RUN apt-get install apache2 -y`  
+    + `RUN ["/bin/bash", "-c", "echo hello > test2.html"]`
+    
+<br/>
+
+- `ADD` \[from\] \[to\]  
+    파일을 이미지에 추가합니다.  
+   + `ADD test.html /var/www/html`
+    
+<br/>
+
+- `WORKDIR`  
+    명령어를 실행할 디렉토리를 지정합니다.  
+    bash 쉘에서 `cd` 명령어와 동일한 기능입니다.  
+    + `WORKDIR /var/www/html`
+    
+<br/>
+
+- `EXPOSE`  
+    이미지에서 노출할 포트를 설정합니다.  
+    + `EXPOSE 80`
+    
+<br/>
+    
+- `CMD`  
+    컨테이너가 시작될 때 시작할 명령어를 지정합니다.  
+    한 번만 사용할 수 있으며, 주로 docker image 로 빌드된 application 을 실행할 때 쓰입니다.  
+    + `CMD echo "hello world!"`
+    + `CMD apachectl -DFOREGROUND`
