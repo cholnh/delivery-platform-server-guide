@@ -120,3 +120,8 @@ MSA 에서는 작은 서비스 단위로 잦은 배포가 이루어지므로 컨
 이러한 컨테이너 관리 기술을 통틀어 컨테이너 오케스트레이션 이라 합니다.  
 오케스트레이션 도구로는 Docker Swarm, Apache Mesos,  
 그리고 최근 구글이 자사의 도커 컨테이너 관리 노하우를 바탕으로 만든 Kubernetes 가 있습니다.  
+쿠버네티스에 관한 설명은 [이곳을](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-kubernetes.md#쿠버네티스) 참조해주세요.
+
+<br/><br/>
+
+### 클라우드 인프라 서비스
