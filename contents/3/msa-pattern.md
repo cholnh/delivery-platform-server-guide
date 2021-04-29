@@ -131,4 +131,21 @@ MSA 에서는 작은 서비스 단위로 잦은 배포가 이루어지므로 컨
 - Azure
 - Google Cloud 등
 
+<br/>
+
+MSA 시스템으로 간다고 하면 쿠버네티스는 아니지만 동일하게 컨테이너 기반인
+- AWS Elastic Beanstalk
+- Elastic Container Service(ECS)
+- Azure Web App
+- Google App Engine 등
+여러 PaaS 를 고려할 수 있습니다.
+
+> PaaS(Platform as a Service) : 복잡함 없이 어플리케이션을 곧바로 개발, 실행, 관리할 수 있는 플랫폼 환경을 서비스 형태로 제공합니다. 
+> IaaS 위에 미들웨어나 런타임까지 탑재된 환경이라 생각하면 됩니다.
+
+<br/><br/>
+
+## 플랫폼 패턴
+
+
 
