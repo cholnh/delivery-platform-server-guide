@@ -183,6 +183,9 @@ MSA 시스템으로 간다고 하면 쿠버네티스는 아니지만 동일하�
     
 - CD (Continuous Deployment; 지속적 배포)  
     소스코드 저장소에서 빌드한 소스코드의 실행 파일을 실행 환경까지 자동으로 배포하는 방식을 뜻합니다.  
+    다른 의미의 CD (지속적 제공; Continuous Delivery) 와의 차이는 엄격한 배포 절차에 있다.
     
-    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-cd-diff.png" width="500"/>|
+    |-|
+    |그림 3 - Continuous Deployment 와 Continuous Delivery 차이|
 
