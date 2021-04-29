@@ -189,3 +189,6 @@ MSA 시스템으로 간다고 하면 쿠버네티스는 아니지만 동일하�
     |-|
     |그림 3 - Continuous Deployment 와 Continuous Delivery 차이|
 
+<br/><br/>
+
+### 빌드/배포 파이프라인 설계
