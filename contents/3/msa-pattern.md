@@ -318,7 +318,7 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
 1. 환경 설정 정보를 형상관리 시스템에 연계된 Config 서비스에서 가져와 설정 정보를 주입 후 클라우드 인프라의 개별 인스턴스로 로딩.  
     + 모든 마이크로 서비스를 인프라에 종속되지 않도록 설정파일을 분리
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-1.png" width="500"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-1.png" width="600"/>|
     |-|
     |설정 정보 주입|
 
@@ -326,7 +326,7 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
 
 2. 로딩과 동시에 '서비스 레지스트리'에 자신의 서비스명과 클라우드 인프라로 부터 할당받은 물리 주소를 매핑해서 등록.  
 
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-2.png" width="500"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-2.png" width="600"/>|
     |-|
     |서비스 등록|
     
