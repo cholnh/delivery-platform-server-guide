@@ -232,7 +232,7 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
 ### 마이크로 서비스 생태계
 마이크로 서비스가 어떻게 발전했는지 흐름을 살펴보겠습니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-history.png" width="900"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-history.png" width="800"/>|
 |-|
 |그림 4 - 마이크로 서비스 발전 히스토리|
 
