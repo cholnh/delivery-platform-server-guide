@@ -366,7 +366,7 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
 
 전체 아키텍처는 다음과 같습니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-all.png" width="600"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-all.png" width="1100"/>|
 |-|
 |스프링 클라우드를 기반으로 한 아키텍처 전체 흐름도|
 
