@@ -333,3 +333,15 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
 <br/>
 
 3. 클라이언트가 'API 게이트웨이'를 통해 마이크로 서비스에 접근하고, 이때 API 게이트웨이는 적절한 라우팅 및 부하 관리를 위한 로드 밸런싱 추가.
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-3.png" width="600"/>|
+    |-|
+    |API 게이트웨이|
+    
+<br/>
+
+4. API 게이트웨이에서 클라이언트가 마이크로 서비스에 접근하기 위한 주소를 알기 위해 '서비스 레지스트리' 검색을 통해 서비스의 위치 반환.
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-4.png" width="600"/>|
+    |-|
+    |서비스 디스커버리|
