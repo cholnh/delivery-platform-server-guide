@@ -331,7 +331,7 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
     |서비스 등록|
     
 <br/>
-
+        
 3. 클라이언트가 'API 게이트웨이'를 통해 마이크로 서비스에 접근하고, 이때 API 게이트웨이는 적절한 라우팅 및 부하 관리를 위한 로드 밸런싱 추가.
 
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-3.png" width="600"/>|
@@ -345,3 +345,27 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-4.png" width="600"/>|
     |-|
     |서비스 디스커버리|
+    
+<br/>
+
+5. 동시에 API 게이트웨이는 클라이언트가 각 서비스에 접근할 수 있는 권한이 있는지 '인증 서비스'와 연계하여 인증/인가 처리를 수행. 
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-5.png" width="600"/>|
+    |-|
+    |서비스 인증/인가|
+    
+<br/>
+
+6. 이러한 모든 마이크로 서비스 간의 호출 흐름은 '모니터링 서비스'와 '추적 서비스'에 의해 모니터링/추적 됩니다.
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-6.png" width="600"/>|
+    |-|
+    |모니터링/추적|
+    
+<br/><br/>
+
+전체 아키텍처는 다음과 같습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-all.png" width="600"/>|
+|-|
+|스프링 클라우드를 기반으로 한 아키텍처 전체 흐름도|
