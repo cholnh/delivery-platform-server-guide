@@ -396,4 +396,10 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
 
 <br/>
 
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-mash.png" width="900"/>|
+|-|
+|서비스 메시 개념도|
+
+<br/>
+
 
