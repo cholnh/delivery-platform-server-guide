@@ -396,7 +396,7 @@ MSA 서비스 마다 각자 다른 빌드/배포 파이프라인을 설계하고
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-mash.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-mash.png" width="900"/>|
 |-|
 |서비스 메시 개념도|
 
@@ -433,7 +433,7 @@ MSA 문제 영역 해결을 위한 기능
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-mash-call.png" width="900"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-service-mash-call.png" width="700"/>|
 |-|
 |서비스 메시의 통신|
 
