@@ -36,3 +36,5 @@
 ## 4. 전략과 도구
 
 <br/>
+
+### Google Cloud Platform
