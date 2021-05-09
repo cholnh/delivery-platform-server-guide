@@ -36,5 +36,3 @@
 ## 4. 전략과 도구
 
 <br/>
-
-:construction: **작성중입니다!** :construction:
