@@ -117,7 +117,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     구글에서 제공하는 busybox 이미지를 기본으로 넣어주겠습니다.  
     `gcr.io/google-containers/busybox` 를 적어 넣습니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-2.png" width="400"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-2.png" width="500"/>|
 |-|
 |인스턴스 만들기 폼 작성|
 
@@ -125,7 +125,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 
 - 아래 폼 마저 작성 후 `만들기` 버튼을 눌러 인스턴스를 생성합니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-3.png" width="400"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-3.png" width="500"/>|
 |-|
 |인스턴스 만들기 폼 작성|
 
