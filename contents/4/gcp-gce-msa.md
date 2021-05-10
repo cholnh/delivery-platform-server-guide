@@ -87,15 +87,47 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 
 <br/>
 
-결제 수단에서 신용카드를 등록해줍니다. (무료 크레딧 기간 종료 후에도 돈이 빠져나가진 않습니다)
+- 결제 수단에서 신용카드를 등록해줍니다. (무료 크레딧 기간 종료 후에도 돈이 빠져나가진 않습니다)
 
 <br/>
 
-결제 등록을 마쳤다면 왼쪽 메뉴를 열어 컴퓨팅 카테고리에서 `Compute Engine` 을 선택해 줍니다.
+- 결제 등록을 마쳤다면 왼쪽 메뉴를 열어 컴퓨팅 카테고리에서 `Compute Engine` 을 선택해 줍니다.
 
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-sidebar.png" width="400"/>|
 |-|
 |Compute Engine 선택|
+
+<br/>
+
+- 위 메뉴에서 `인스턴스 만들기` 를 선택하여 새 인스턴스를 생성해보겠습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-new-instance.png" width="900"/>|
+|-|
+|인스턴스 만들기 선택|
+
+<br/>
+
+- `인스턴스 이름`을 적고 `리전`을 선택해줍니다.  
+    해당 프로젝트에서는 무료크레딧을 사용하여 서울 리전을 선택하겠습니다.  
+- 아래 `머신 유형`은 해당 인스턴스의 스팩을 나타냅니다.  
+    역시 적절한 머신 스팩을 선택해줍니다.  
+- 컨테이너 아래 선택란을 선택해줍니다.  
+    해당 머신이 컨테이너에 적합한 머신으로 세팅됩니다.  
+    아래 컨테이너 이미지란에 초기 인스턴스에 배포할 이미지를 설정해줍니다.  
+    구글에서 제공하는 busybox 이미지를 기본으로 넣어주겠습니다.  
+    `gcr.io/google-containers/busybox` 를 적어 넣습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-2.png" width="400"/>|
+|-|
+|인스턴스 만들기 폼 작성|
+
+<br/>
+
+- 아래 폼 마저 작성 후 `만들기` 버튼을 눌러 인스턴스를 생성합니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-3.png" width="400"/>|
+|-|
+|인스턴스 만들기 폼 작성|
 
 <br/>
 
