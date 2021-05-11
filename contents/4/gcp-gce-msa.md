@@ -378,6 +378,33 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |-|
     |Spring Initializer Gradle 설정|  
     
+<br/>
+
+- 기본적인 API 컨트롤러를 생성해줍니다.  
+
+    ```java
+    @RestController
+    @RequestMapping("/hello")
+    public class HelloApi {
+        @GetMapping
+        public ResponseEntity<?> hello() {
+            return ResponseEntity.ok("success hello world!");
+        }
+    }
+    ```
+    
+    + `@RestController` 어노테이션을 통해 해당 Class 가 Spring 에서 제공되는 Controller Bean 이라는 것을 알립니다.  
+        (초기 IoC 컨테이너의 Bean 스캔/등록 과정에서 해당 Class 가 Controller Bean 으로 등록됩니다)
+    + `@RequestMapping` 어노테이션을 통해 컨트롤러의 경로를 매핑해줍니다.  
+        해당 컨트롤러는 `/hello` 경로로 진입되는 모든 요청을 전달 받게됩니다. 
+    + `@GetMapping` 어노테이션은 비즈니스 로직을 처리하는 메서드에 HTTP Method 의 `GET` 요청을 매핑해줍니다.
+    + `ResponseEntity` 클래스는 Spring 프레임워크에서 제공하는 클래스 중 `HttpHeader` 와 `HttpBody` 를 포함하는 클래스인 `HttpEntity` 를 상속받아 구현한 클래스입니다.  
+        요청에 대한 응답을 전달할 때 `상태코드`, `헤더`, `응답데이터`를 묶어 제공합니다.
+        
+<br/>
+
+
+        
 <br/><br/>
 
 ### Dockerfile
