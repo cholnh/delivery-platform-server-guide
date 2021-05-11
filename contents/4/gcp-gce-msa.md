@@ -188,7 +188,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
     + GCP 왼쪽 메뉴에서 메타데이터 탭으로 들어가줍니다.  
     
-        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-menu.png" width="400"/>|
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-menu.png" width="250"/>|
         |-|
         |GCP 메타데이터 메뉴|
     
