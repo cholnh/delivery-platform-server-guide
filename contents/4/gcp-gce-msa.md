@@ -284,7 +284,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 
 <br/>
 
-#### (참고용) 파일 전송
+#### (참고) 파일 전송
 - 로컬에서 원격으로 파일 전송  
     (로컬 터미널에서)   
     `
@@ -299,9 +299,9 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
     <br/>
     
-    + `-i` : 연결용 rsa key
-    + `-p` : 원본파일 수정/사용시간 및 권한 유지
-    + `-P` : 포트번호 지정
+    + `-i` : 연결용 rsa key  
+    + `-p` : 원본파일 수정/사용시간 및 권한 유지  
+    + `-P` : 포트번호 지정  
     + `-r` : 디렉터리 recursive 복사  
         (testdir 디렉터리 전체 -> testscp 디렉터리 안으로 전체 복사)
         
@@ -322,7 +322,34 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 <br/><br/>
 
 ### 스프링부트 프로젝트 생성
+[IntelliJ IDE](https://www.jetbrains.com/ko-kr/idea/) 를 사용하여 스프링부트 프로젝트를 생성해보겠습니다.
 
+<br/>
+
+- `File` 탭 - `New` - `Project...` 를 선택하여 새 프로젝트를 생성합니다.  
+    왼쪽 탭에서 `Spring Initializer` 를 선택하고 Java SDK 버전 선택 후 다음을 누릅니다.  
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-menu.png" width="700"/>|
+    |-|
+    |Spring Initializer 프로젝트 생성|  
+
+<br/>
+
+- Metadata 를 적어줍니다.
+    + `Group` 에 java 패키지 네이밍을 기입해줍니다. (URL 형식을 반대)  
+        group id 는 프로젝트마다 구별할 수 있는 고유한 이름입니다.  
+    + `Artifact` 는 jar 파일에서 버전 정보를 뺀 어플리케이션 이름입니다.  
+    + `Type` 에서 Gradle Project 를 선택해줍니다. (Maven 사용하시는 분들은 Maven Project 를 선택해줍니다)
+    + `Language` 와 사용언어 버전을 선택해줍니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-metadata.png" width="700"/>|
+    |-|
+    |Spring Initializer Metadata|  
+    
+<br/>
+
+- 
+    
 <br/><br/>
 
 ### Dockerfile
