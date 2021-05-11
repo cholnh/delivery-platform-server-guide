@@ -431,6 +431,14 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
     + 내장 Tomcat(버전 9.0)이 내부포트 8085 에서 실행되었다는 콘솔 메시지를 확인할 수 있습니다.
         
+<br/>
+
+- [Postman 프로그램](https://www.postman.com/downloads/)을 사용하여 API 요청이 잘 반환되는지 확인해볼 수 있습니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-postman.png" width="900"/>|
+    |-|
+    |Postman 프로그램을 통한 API 요청 확인|  
+    
 <br/><br/>
 
 ### Dockerfile
