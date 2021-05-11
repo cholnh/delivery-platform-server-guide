@@ -403,7 +403,31 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
         
 <br/>
 
+- 스프링 설정 파일인 `application.properties` 을 변경해줍니다.  
+    스프링 프로젝트에 연관된 설정 정보(Configuration)를 관리하는 파일입니다.
+    
+    + .properties 확장자를 .yml(yaml 확장자) 로 변경해줍니다. (선택사항 입니다. 조금 더 설정 정보를 구조적으로 파악할 수 있습니다.)
+    
+    + 파일 안에 서버의 포트번호를 변경하는 설정 내용을 적어줍니다. (기본 포트번호는 8080 입니다. 변경하지 않으셔도 됩니다.)  
+        
+        ```yaml
+        server:
+          port: 8085
+        ```
 
+<br/>
+
+- Run 메뉴에서 어플리케이션 실행을 시켜봅니다.
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-run.png" width="400"/>|
+    |-|
+    |Spring 프로젝트 실행|  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-run-console.png" width="1000"/>|
+    |-|
+    |Spring 프로젝트 실행결과|  
+    
+    + 내장 Tomcat(버전 9.0)이 내부포트 8085 에서 실행되었다는 콘솔 메시지를 확인할 수 있습니다.
         
 <br/><br/>
 
