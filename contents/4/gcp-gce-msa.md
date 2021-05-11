@@ -144,6 +144,8 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 
 ### 인스턴스 컨테이너에 접속하기
 
+#### GCP 웹에서 접속하기
+
 - 연결탭에 SSH 화살표를 누르면 여러 SSH 연결 기능을 살펴볼 수 있습니다.  
 
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-instance-ssh.png" width="500"/>|
@@ -158,38 +160,53 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |-|
     |인스턴스 SSH 브라우저 연결|
     
+<br/><br/>
+
+#### mac 터미널에서 접속하기
+- RSA KEY 생성  
+    + 터미널에 다음과 같이 입력하여 KEY 생성을 합니다.
+    
+    `
+    $ ssh-keygen -t rsa -f [KEY 위치+이름] -C "[유저 아이디]" 
+    `
+    
+    예시  
+    
+    ```
+    ssh-keygen -t rsa -f ~/.ssh/rsa-gcp-key -C "nzzi.dev@gmai.com" 
+    ```
+
 <br/>
 
-- mac 터미널에서 접속하기
-    + RSA KEY 생성  
-        터미널에 다음과 같이 입력하여 KEY 생성을 합니다.
+- 생성된 ~/.ssh/rsa-gcp-key.pub 내용을 GCP 메타데이터에 등록해줍니다.  
         
-        `
-        ssh-keygen -t rsa -f [KEY 위치+이름] -C "[유저 아이디]" 
-        `
-        
-        예시  
-        
-        ```
-        $ ssh-keygen -t rsa -f ~/.ssh/rsa-gcp-key -C "nzzi.dev@gmai.com" 
-        ```
-
-    + 생성된 ~/.ssh/rsa-gcp-key.pub 내용을 GCP 메타데이터에 등록해줍니다.  
-        
-        rsa-gcp-key.pub 내용확인  
-        
-        ```
-        $ cat ~/.ssh/rsa-gcp-key.pub
-        ```
-        
+    + `cat` 으로 rsa-gcp-key.pub 내용을 확인해줍니다.  
+    
+    ```
+    cat ~/.ssh/rsa-gcp-key.pub
+    ```
+    
+    + GCP 왼쪽 메뉴에서 메타데이터 탭으로 들어가줍니다.  
+    
         |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-menu.png" width="400"/>|
         |-|
         |GCP 메타데이터 메뉴|
-        
+    
+    + 위 탭에서 `SSH 키` 탭을 선택해주고 `수정` - `항목 추가`를 선택해줍니다.  
+        cat 으로 확인한 공개키(~/.ssh/rsa-gcp-key.pub) 내용을 복사합니다.  
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-input.png" width="600"/>|
+        |-|
+        |GCP 메타데이터 메뉴|
+    
 <br/>
-        
 
-- window putty 에서 접속하기
+- 
+
+
+<br/><br/>
+
+#### window putty 에서 접속하기
 
 <br/><br/>
 
