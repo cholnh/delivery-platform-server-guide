@@ -167,7 +167,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     + 터미널에 다음과 같이 입력하여 KEY 생성을 합니다.
     
     `
-    $ ssh-keygen -t rsa -f [KEY 위치+이름] -C "[유저 아이디]" 
+    $ ssh-keygen -t rsa -f [KEY 위치+이름] -C "[유저 아이디@gmail.com]" 
     `
     
     예시  
@@ -175,6 +175,8 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     ```
     ssh-keygen -t rsa -f ~/.ssh/rsa-gcp-key -C "nzzi.dev@gmai.com" 
     ```
+    
+    + 비밀번호 추가 옵션은 선택입니다.
 
 <br/>
 
@@ -201,12 +203,43 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
 <br/>
 
-- 
+- 터미널에서 ssh 명령어를 통해 접속해줍니다.  
 
+    `-i` 옵션뒤에 위에서 생성한 `private key` 위치를 적습니다. 
+
+    `
+    $ ssh -i [KEY 위치+이름] [유저 아이디]@[외부 접속 IP]
+    `
+
+    예시  
+    
+    ```
+    ssh -i ~/.ssh/rsa-gcp-key nzzi.dev@34.64.154.29
+    ```
+    
+    + 위에서 비밀번호 추가 옵션을 적으셨다면 추가로 기입해줍니다.
 
 <br/><br/>
 
-#### window putty 에서 접속하기
+#### window putty 에서 접속하기  
+윈도우 접속은 [putty 프로그램](https://putty.softonic.kr/)을 사용합니다.  
+링크를 통해 putty 를 다운로드 합니다.
+
+- PuTTYgen 을 통해 key 를 생성합니다.  
+    + `Generate` 를 누르면 key 가 생성됩니다.  
+    
+       |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-generate.png" width="400"/>|
+       |-|
+       |PuTTYgen key 생성|
+
+    + Key comment 부분에 구글 아이디를 적습니다.
+    + 비밀번호를 추가 하고 싶으시면 Key passphrase 에 비밀번호를 적습니다.
+    + `Save public key` 를 눌러 공개키를 저장합니다.
+    + `Save private key` 를 눌러 비밀키를 저장합니다.  
+    
+       |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-save.png" width="400"/>|
+       |-|
+       |PuTTYgen key 저장|
 
 <br/><br/>
 
