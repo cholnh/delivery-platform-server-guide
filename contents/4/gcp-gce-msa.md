@@ -234,18 +234,17 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 
     + Key comment 부분에 구글 아이디를 적습니다.
     + 비밀번호를 추가 하고 싶으시면 Key passphrase 에 비밀번호를 적습니다.
-    + 위 네모칸에 적힌 공개키 내용을 복사해둡니다.
-    
-        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-copy.png" width="400"/>|
-        |-|
-        |PuTTYgen 공개키 key 복사|
-    
     + `Save private key` 를 눌러 비밀키를 저장합니다.  
     
         |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-save.png" width="400"/>|
         |-|
         |PuTTYgen 비밀키 key 저장|
-
+        
+    + 위 네모칸에 적힌 공개키 내용을 복사해둡니다.
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-copy.png" width="400"/>|
+        |-|
+        |PuTTYgen 공개키 key 복사|
 <br/>
 
 - 복사한 공개키 내용을 GCP 메타데이터에 등록해줍니다.  
