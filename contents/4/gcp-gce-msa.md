@@ -348,7 +348,35 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
 <br/>
 
-- 
+- 필요한 Dependency 를 설정해줍니다.  
+    기본적인 `Lombok` 과 `Spring Web` 을 선택해주겠습니다.  
+    (추가적으로 필요한 Dependency 를 선택하여 구성하셔도 됩니다)  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-dependency-1.png" width="700"/>|
+    |-|
+    |Spring Initializer Lombok Dependency|  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-dependency-2.png" width="700"/>|
+    |-|
+    |Spring Initializer Spring Web Dependency|
+    
+<br/>
+
+- 프로젝트 저장 경로를 설정해줍니다.  
+    `Finish` 를 눌러 프로젝트 생성을 마칩니다.
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-location.png" width="700"/>|
+    |-|
+    |Spring Initializer location|  
+    
+<br/>
+
+- 프로젝트가 빌드되며 Gradle 설정 창이 뜨게됩니다.  
+    Use auto-import 를 선택하여 자동 gradle import 기능을 활성화 시켜줍니다. 
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-springboot-gradle.png" width="700"/>|
+    |-|
+    |Spring Initializer Gradle 설정|  
     
 <br/><br/>
 
