@@ -91,19 +91,19 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 
 <br/>
 
-- 결제 등록을 마쳤다면 왼쪽 메뉴를 열어 컴퓨팅 카테고리에서 `Compute Engine` 을 선택해 줍니다.
+- 결제 등록을 마쳤다면 왼쪽 메뉴를 열어 컴퓨팅 카테고리에서 `Compute Engine` 을 선택해 줍니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-sidebar.png" width="400"/>|
-|-|
-|Compute Engine 선택|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-sidebar.png" width="400"/>|
+    |-|
+    |Compute Engine 선택|
 
 <br/>
 
-- 위 메뉴에서 `인스턴스 만들기` 를 선택하여 새 인스턴스를 생성해보겠습니다.
+- 위 메뉴에서 `인스턴스 만들기` 를 선택하여 새 인스턴스를 생성해보겠습니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-new-instance.png" width="900"/>|
-|-|
-|인스턴스 만들기 선택|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-new-instance.png" width="900"/>|
+    |-|
+    |인스턴스 만들기 선택|
 
 <br/>
 
@@ -115,23 +115,29 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     해당 머신이 컨테이너에 적합한 머신으로 세팅됩니다.  
     아래 컨테이너 이미지란에 초기 인스턴스에 배포할 이미지를 설정해줍니다.  
     구글에서 제공하는 busybox 이미지를 기본으로 넣어주겠습니다.  
-    `gcr.io/google-containers/busybox` 를 적어 넣습니다.
+    `gcr.io/google-containers/busybox` 를 적어 넣습니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-2.png" width="500"/>|
-|-|
-|인스턴스 만들기 폼 작성|
-
-<br/>
-
-- 아래 폼 마저 작성 후 `만들기` 버튼을 눌러 인스턴스를 생성합니다.
-
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-3.png" width="500"/>|
-|-|
-|인스턴스 만들기 폼 작성|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-2.png" width="500"/>|
+    |-|
+    |인스턴스 만들기 폼 작성|
 
 <br/>
 
+- 아래 폼 마저 작성 후 `만들기` 버튼을 눌러 인스턴스를 생성합니다.  
 
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vm-3.png" width="500"/>|
+    |-|
+    |인스턴스 만들기 폼 작성|
+
+<br/>
+
+- 생성된 인스턴스를 확인할 수 있습니다.
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-instance-view.png" width="900"/>|
+    |-|
+    |인스턴스|
+
+<br/>
 
 <br/><br/>
 
