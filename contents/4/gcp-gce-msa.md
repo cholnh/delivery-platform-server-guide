@@ -278,7 +278,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
     + 터미널에서 요구하는 로그인정보를 입력해줍니다.
     
-        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-putty-login.png" width="400"/>|
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-putty-login.png" width="600"/>|
         |-|
         |puTTY 로그인|     
 
