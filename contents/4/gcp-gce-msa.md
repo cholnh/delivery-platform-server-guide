@@ -228,18 +228,60 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 - PuTTYgen 을 통해 key 를 생성합니다.  
     + `Generate` 를 누르면 key 가 생성됩니다.  
     
-       |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-generate.png" width="400"/>|
-       |-|
-       |PuTTYgen key 생성|
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-generate.png" width="400"/>|
+        |-|
+        |PuTTYgen key 생성|
 
     + Key comment 부분에 구글 아이디를 적습니다.
     + 비밀번호를 추가 하고 싶으시면 Key passphrase 에 비밀번호를 적습니다.
-    + `Save public key` 를 눌러 공개키를 저장합니다.
+    + 위 네모칸에 적힌 공개키 내용을 복사해둡니다.
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-copy.png" width="400"/>|
+        |-|
+        |PuTTYgen 공개키 key 복사|
+    
     + `Save private key` 를 눌러 비밀키를 저장합니다.  
     
-       |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-save.png" width="400"/>|
-       |-|
-       |PuTTYgen key 저장|
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-puttygen-save.png" width="400"/>|
+        |-|
+        |PuTTYgen 비밀키 key 저장|
+
+<br/>
+
+- 복사한 공개키 내용을 GCP 메타데이터에 등록해줍니다.  
+    + GCP 왼쪽 메뉴에서 메타데이터 탭으로 들어가줍니다.  
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-menu.png" width="250"/>|
+        |-|
+        |GCP 메타데이터 메뉴|
+    
+    + `SSH 키` 탭을 선택해주고 `수정` - `항목 추가`를 선택해줍니다.  
+        위에서 복사한 공개키 내용을 붙여넣기합니다.  
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-input.png" width="600"/>|
+        |-|
+        |GCP SSH 공개키 등록 예시|
+    
+<br/>
+
+- puTTY 프로그램을 통해 접속해줍니다.
+    + 우선 왼쪽 탭에서 `SSH` - `Auth` 를 선택하고 `Private ket file for authentication` 부분에 비밀키 파일을 등록해줍니다.
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-putty-privatekey.png" width="400"/>|
+        |-|
+        |puTTY 비밀키 등록|  
+    
+    + 왼쪽 탭 `Session` 으로 돌아와 `Host Name` 에 외부 접속 IP 를 적고 `Open` 을 눌러 접속해줍니다.
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-putty-open.png" width="400"/>|
+        |-|
+        |puTTY 외부 접속 IP|  
+    
+    + 터미널에서 요구하는 로그인정보를 입력해줍니다.
+    
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-putty-login.png" width="400"/>|
+        |-|
+        |puTTY 로그인|     
 
 <br/><br/>
 
