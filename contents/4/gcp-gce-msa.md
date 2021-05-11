@@ -448,7 +448,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |-|
     |Gradle build|  
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-gradle-build-output.png" width="400"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-gradle-build-output.png" width="300"/>|
     |-|
     |Gradle build output|  
     
