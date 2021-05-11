@@ -439,6 +439,24 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |-|
     |Postman 프로그램을 통한 API 요청 확인|  
     
+<br/>
+
+- 프로젝트를 실행파일로 build 해줍니다.  
+    오른쪽 탭에서 `Gradle` 창을 열어주시고 `Tasks` - `build` - `bootJar` 를 실행해줍니다. 
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-gradle-build.png" width="400"/>|
+    |-|
+    |Gradle build|  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-gradle-build-output.png" width="400"/>|
+    |-|
+    |Gradle build output|  
+    
+<br/>
+
+이렇게 어플리케이션 실행 파일(.jar)을 완성하였습니다.  
+이제 어플리케이션 서비스를 인스턴스에 올리는 방법을 알아보겠습니다.
+    
 <br/><br/>
 
 ### Dockerfile
