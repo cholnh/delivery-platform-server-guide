@@ -150,9 +150,9 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |-|
     |인스턴스 SSH 연결|
 
-    <br/>  
+<br/>  
 
-    + `브라우저 창에서 열기` 시 간단하게 SSH 연결을 하여 터미널을 사용할 수 있습니다.  
+- `브라우저 창에서 열기` 시 간단하게 SSH 연결을 하여 터미널을 사용할 수 있습니다.  
     
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-instance-ssh-view.png" width="500"/>|
     |-|
