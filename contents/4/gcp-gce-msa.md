@@ -282,6 +282,43 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
         |-|
         |puTTY 로그인|     
 
+<br/>
+
+#### (참고용) 파일 전송
+- 로컬에서 원격으로 파일 전송  
+    (로컬 터미널에서)   
+    `
+    $ scp -i [private key 위치] -r [로컬의 원본 경로 및 파일] [유저 아이디]@[원격 외부 IP]:[전송받을 원격지 경로]
+    `
+    
+    예시
+    
+    ```
+    scp -i ~/.ssh/rsa-gcp-key -r ~/Desktop/testdir nzzi.dev@34.64.154.29:~/testscp/
+    ```
+    
+    <br/>
+    
+    + `-i` : 연결용 rsa key
+    + `-p` : 원본파일 수정/사용시간 및 권한 유지
+    + `-P` : 포트번호 지정
+    + `-r` : 디렉터리 recursive 복사  
+        (testdir 디렉터리 전체 -> testscp 디렉터리 안으로 전체 복사)
+        
+<br/>
+
+- 원격에서 로컬로 파일 전송  
+    (로컬 터미널에서)  
+    `
+    $ gcp -i [private key 위치] -r [유저 아이디]@[원격 외부 IP]:[원격지의 원본 경로 및 파일] [전송받을 로컬 경로]
+    `
+    
+    예시
+    
+    ```
+    scp -i ~/.ssh/rsa-gcp-key -r nzzi.dev@34.64.154.29:~/testscp/ ~/Desktop/testdir 
+    ```
+
 <br/><br/>
 
 ### 스프링부트 프로젝트 생성
