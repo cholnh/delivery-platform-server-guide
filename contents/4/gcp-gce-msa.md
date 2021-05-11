@@ -192,12 +192,12 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
         |-|
         |GCP 메타데이터 메뉴|
     
-    + 위 탭에서 `SSH 키` 탭을 선택해주고 `수정` - `항목 추가`를 선택해줍니다.  
-        cat 으로 확인한 공개키(~/.ssh/rsa-gcp-key.pub) 내용을 복사합니다.  
+    + `SSH 키` 탭을 선택해주고 `수정` - `항목 추가`를 선택해줍니다.  
+        위에서 cat 으로 확인한 공개키(~/.ssh/rsa-gcp-key.pub) 내용을 복사합니다.  
     
         |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-input.png" width="600"/>|
         |-|
-        |GCP 메타데이터 메뉴|
+        |GCP SSH 공개키 등록 예시|
     
 <br/>
 
