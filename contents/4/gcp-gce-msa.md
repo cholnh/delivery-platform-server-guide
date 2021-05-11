@@ -161,6 +161,34 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 <br/>
 
 - mac 터미널에서 접속하기
+    + RSA KEY 생성  
+        터미널에 다음과 같이 입력하여 KEY 생성을 합니다.
+        
+        `
+        ssh-keygen -t rsa -f [KEY 위치+이름] -C "[유저 아이디]" 
+        `
+        
+        예시  
+        
+        ```
+        $ ssh-keygen -t rsa -f ~/.ssh/rsa-gcp-key -C "nzzi.dev@gmai.com" 
+        ```
+
+    + 생성된 ~/.ssh/rsa-gcp-key.pub 내용을 GCP 메타데이터에 등록해줍니다.  
+        
+        rsa-gcp-key.pub 내용확인  
+        
+        ```
+        $ cat ~/.ssh/rsa-gcp-key.pub
+        ```
+        
+        |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-menu.png" width="400"/>|
+        |-|
+        |GCP 메타데이터 메뉴|
+        
+<br/>
+        
+
 - window putty 에서 접속하기
 
 <br/><br/>
