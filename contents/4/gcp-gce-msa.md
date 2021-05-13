@@ -462,9 +462,34 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 ### Dockerfile
 
 1. 도커파일 생성  
+    (컨테이너 내부 터미널에서)
+    
+    ```
+    $ cat > Dockerfile <<EOF
+    > [도커 실행 명령어]
+    > EOF
+    ```
+    
+<br/>
+    
 2. 이미지 빌드  
-3. 이미지 실행
-4. 실행 확인 
+    ```
+    $ docker build —tag helloworld:0.1 ./
+    ```
+
+<br/>
+
+3. 이미지 실행  
+    ```
+    $ docker run -p 8080:8080 helloworld:0.1
+    ```
+
+<br/>
+
+4. 실행 확인  
+    
+
+<br/><br/>
 
 ### GCP 방화벽 설정
 vpc 네트워크 - 방화벽 - 방화벽 규칙 만들기
