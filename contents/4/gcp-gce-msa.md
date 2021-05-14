@@ -656,6 +656,12 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 <br/><br/>
 
 ### GCP 방화벽 설정
+위에서 pull 한 `hello-repo` 를 실행하여도 접속이 되지 않습니다.  
+이유는 GCP 인스턴스로 수신해주는 포트가 방화벽에 의해 막혀있기 때문입니다.  
+GCP 인스턴스의 8080 포트를 허용하는 방법을 알아보겠습니다. 
+
+<br/>
+
 - `vpc 네트워크` - `방화벽` 에 들어갑니다.
 
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vpc-firewall-menu.png" width="500"/>|
@@ -693,6 +699,16 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
         전체 IP 를 허용하기 위해 `0.0.0.0/0` 을 기입하였습니다.
     + 허용할 포트를 아래 `프로토콜 및 포트` 칸에 적습니다.  
         `tcp` 포트번호 `8080` 부터 `8085` 를 허용하겠습니다.
+        
+<br/>
+
+- 포스트맨으로 요청이 잘 응답되는지 확인해봅니다.  
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-postman-2.png" width="1000"/>|
+    |-|
+    |응답 테스트|
+    
+    컨테이너에서 서빙중인 어플리케이션이 잘 응답하는 것을 볼 수 있습니다.
         
 <br/><br/>
 
