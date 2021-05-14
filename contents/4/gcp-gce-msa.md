@@ -506,7 +506,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     도커파일을 빌드하여 이미지로 변경합니다.
     
     ```
-    $ docker build —t helloworld:0.1 ./
+    docker build —t helloworld:0.1 ./
     ```
 
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-build.png" width="500"/>|
@@ -526,7 +526,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 3. 이미지 실행  
 
     ```
-    $ docker run -d --rm -p 8080:8080 helloworld:0.1
+    docker run -d --rm -p 8080:8080 helloworld:0.1
     ```
 
     + 기본 실행은 포그라운드에서 실행되며 컨테이너 종료는 `Ctrl + C` 를 입력하여 종료합니다.
@@ -561,8 +561,8 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
     백그라운드로 실행되는 컨테이너 내부로 진입하기 위해서는 다음 명령어를 사용합니다.
     
-    `docker exec -it [이미지 이름 || 컨테이너 아이디] /bin/bash`  
-    `docker exec -it -u 0 [이미지 이름 || 컨테이너 아이디] /bin/bash` // 루트권한 접속
+    `$ docker exec -it [이미지 이름 || 컨테이너 아이디] /bin/bash`  
+    `$ docker exec -it -u 0 [이미지 이름 || 컨테이너 아이디] /bin/bash` // 루트권한 접속
     
     예시 
     
@@ -584,3 +584,16 @@ vpc 네트워크 - 방화벽 - 방화벽 규칙 만들기
 <br/><br/>
 
 ### 도커 컨테이너 종료
+- 컨테이너 중지  
+    `$ docker stop [컨테이너 아이디 || alias name]`
+
+<br/>
+
+- 컨테이너 재시작  
+    `$ docker restart [컨테이너 아이디 || alias name]`
+    
+- 컨테이너/이미지 삭제  
+    `$ docker rm -f [컨테이너 아이디]` // 컨테이너 삭제
+    `$ docker rmi [이미지 이름]` // 이미지  삭제
+    
+<br/>
