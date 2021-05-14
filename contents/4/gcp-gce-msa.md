@@ -513,6 +513,10 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |-|
     |도커 이미지 빌드|  
     
+    <br/>
+    
+    `docker images` 명령어를 사용하여 빌드된 이미지를 확인해봅니다.
+    
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-images.png" width="700"/>|
     |-|
     |도커 이미지 빌드 결과|  
@@ -525,8 +529,10 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     $ docker run -d --rm -p 8080:8080 helloworld:0.1
     ```
 
+    + 기본 실행은 포그라운드에서 실행되며 컨테이너 종료는 `Ctrl + C` 를 입력하여 종료합니다.
     + 컨테이너를 백그라운드에서 실행시키려면 `-d` 모드를 설정합니다.  
     + 프로세스 종료시 컨테이너를 자동 제거 하려면 `--rm` 모드를 설정합니다.
+    + `run` 명령어는 최초실행시에만 사용하고, 그 다음부터는 `restart` 또는 `start`, `stop` 명령을 사용합니다.
     
     이외에 컨테이너 실행 옵션은 다음과 같습니다.
     
@@ -540,6 +546,15 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |`--rm`|프로세스 종료시 컨테이너 자동 제거|
     |`--it`|-i와 -t를 동시에 사용한 것으로 터미널 입력을 위한 옵션|
     |`–link`|컨테이너 연결 \[컨테이너명:별칭\]|
+
+    <br/>
+
+    `docker ps` 명령어를 사용하여 실행중인 컨테이너를 확인해봅니다.  
+    (`-a` 옵션 사용시 전체 컨테이너 확인이 가능합니다)  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-ps.png" width="1100"/>|
+    |-|
+    |도커 컨테이너 실행 결과|  
 
 <br/>
 
