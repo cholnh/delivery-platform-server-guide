@@ -492,7 +492,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     FROM java:8
     VOLUME /helloworldVolume
     EXPOSE 8080
-    ARG JAR_FILE=helloworld.jar
+    ARG JAR_FILE=helloworld-0.0.1-SNAPSHOT.jar
     ADD ${JAR_FILE} app.jar
     ENTRYPOINT ["java", "-jar", "/app.jar"]
     EOF
@@ -502,10 +502,20 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
 <br/>
     
-2. 이미지 빌드  
+2. 도커 이미지 빌드  
+    도커파일을 빌드하여 이미지로 변경합니다.
+    
     ```
-    $ docker build —tag helloworld:0.1 ./
+    $ docker build —t helloworld:0.1 ./
     ```
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-build.png" width="500"/>|
+    |-|
+    |도커 이미지 빌드|  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-images.png" width="700"/>|
+    |-|
+    |도커 이미지 빌드 결과|  
 
 <br/>
 
