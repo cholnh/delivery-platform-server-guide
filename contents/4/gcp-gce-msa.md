@@ -455,7 +455,22 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 <br/>
 
 이렇게 어플리케이션 실행 파일(.jar)을 완성하였습니다.  
-이제 어플리케이션 서비스를 인스턴스에 올리는 방법을 알아보겠습니다.
+터미널 `scp` 명령어를 사용하여 로컬에서 원격지로 파일 전송을 해보겠습니다.  
+(나중에는 이러한 빌드 및 배포 과정이 자동화 됩니다)
+
+- (로컬)터미널을 열고 scp 명령어를 사용하여 파일을 전송합니다.  
+
+    ```
+    scp -i ~/.ssh/rsa-gcp-key -r ~/Desktop/helloworld-0.0.1-SNAPSHOT.jar nzzi.dev@34.64.154.29:~/
+    ```
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-scp-output.png" width="400"/>|
+    |-|
+    |원격지에 어플리케이션 파일 전송|  
+
+<br/>
+
+다음은 Dockerfile 을 정의하고 도커 컨테이너 위에 어플리케이션을 실행하는 방법을 알아보겠습니다.
     
 <br/><br/>
 
@@ -469,6 +484,21 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     > [도커 실행 명령어]
     > EOF
     ```
+    
+    예시
+    
+    ```
+    cat > Dockerfile <<EOF
+    FROM java:8
+    VOLUME /helloworldVolume
+    EXPOSE 8080
+    ARG JAR_FILE=helloworld.jar
+    ADD ${JAR_FILE} app.jar
+    ENTRYPOINT ["java", "-jar", "/app.jar"]
+    EOF
+    ```
+    
+    도커 파일 명령어에 관한 설명은 [이곳에](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-docker.md#자주쓰는-도커-파일-명령어) 정리해두었습니다.
     
 <br/>
     
