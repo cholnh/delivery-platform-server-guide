@@ -572,6 +572,86 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     
     + `-i` 는 interactive 라는 뜻으로, 컨테이너와 상호적으로 통신하겠다는 뜻입니다.
     + `-t` 는 tty(가상콘솔) 를 사용하겠다는 뜻입니다.
+    + 접속 종료는 `exit` 명령어를 사용합니다.
+    
+<br/>
+
+5. 도커 허브에 push 하기  
+    현재까지 작업한 **스프링부트 어플리케이션이 실행되는 컨테이너** 를 [도커 허브 저장소](https://hub.docker.com/)에 저장해보겠습니다.  
+    도커 허브 저장소 생성에 관한 내용은 [이곳에](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-docker.md#도커) 정리해두었습니다.
+   
+    <br/>
+    
+    저장소 이름은 `hello-repo` 로 생성하였습니다.  
+    (원격지)터미널로 돌아와 다음 명령을 입력하여 도커허브에 로그인합니다.  
+    (도커 허브 아이디/패스워드를 입력합니다)
+    
+    `
+    $ docker login
+    `
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-login.png" width="1100"/>|
+    |-|
+    |도커 허브 터미널 로그인| 
+
+    <br/>
+    
+    도커 이미지에 `tag` 를 지정합니다.
+
+    `
+    $ docker tag [이미지 이름] [도커 허브 유저 아이디]/[도커 허브 저장소 이름]
+    `
+    
+    예시
+    
+    ```
+    docker tag helloworld:0.1 cholnh1/hello-repo
+    ```
+    
+    <br/>
+    
+    태그가 적용된 이미지를 도커 저장소에 `push` 합니다.
+    
+    `
+    $ docker push [도커 허브 유저 아이디]/[도커 허브 저장소 이름]
+    `
+    
+    예시
+    
+    ```
+    docker push cholnh1/hello-repo
+    ```
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-push.png" width="1100"/>|
+    |-|
+    |도커 허브 push| 
+    
+    <br/>
+    
+    도커 허브 저장소에 푸시된 모습입니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-dockerhub-push-output.png" width="1100"/>|
+    |-|
+    |도커 허브 저장소| 
+    
+    <br/>
+    
+    저장된 이미지를 `pull` 명령을 사용하여 어느 컨테이너에서든 사용할 수 있습니다.  
+    
+    <br/>
+    
+    예시
+    
+    ```
+    docker pull cholnh1/hello-repo:latest
+    ```
+    
+    또는
+    
+    ```
+    docker run -p 8080:8080 -d --rm cholnh1/hello-repo:latest
+    ``` 
+    
     
 <br/><br/>
 
