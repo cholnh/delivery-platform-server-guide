@@ -265,6 +265,8 @@
     + `CMD apachectl -DFOREGROUND`
     + `CMD ["npm", "run", "serve"]`
     
+    <br/>
+    
     > `CMD` 와 `ENTRYPOINT` 는 컨테이너가 생성될 때 실행되는 것은 동일하지만 `docker run` 명령에서 동작 방식이 다릅니다.  
     > `docker run` 명령에서 실행할 파일을 설정하면 `CMD` 명령은 무시됩니다.
     
