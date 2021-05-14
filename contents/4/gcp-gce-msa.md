@@ -664,7 +664,7 @@ GCP 인스턴스의 8080 포트를 허용하는 방법을 알아보겠습니다.
 
 - `vpc 네트워크` - `방화벽` 에 들어갑니다.
 
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vpc-firewall-menu.png" width="500"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vpc-firewall-menu.png" width="400"/>|
     |-|
     |GCP 방화벽| 
     
@@ -680,7 +680,7 @@ GCP 인스턴스의 8080 포트를 허용하는 방법을 알아보겠습니다.
 
 - 규칙을 작성합니다.  
 
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-firewall-form-1.png" width="600"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-firewall-form-1.png" width="5600"/>|
     |-|
     |GCP 방화벽 규칙 작성| 
 
@@ -689,7 +689,7 @@ GCP 인스턴스의 8080 포트를 허용하는 방법을 알아보겠습니다.
     
     <br/>
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-firewall-form-2.png" width="600"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-firewall-form-2.png" width="500"/>|
     |-|
     |GCP 방화벽 규칙 작성| 
     
