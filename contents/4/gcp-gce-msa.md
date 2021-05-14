@@ -587,13 +587,9 @@ vpc 네트워크 - 방화벽 - 방화벽 규칙 만들기
 - 컨테이너 중지  
     `$ docker stop [컨테이너 아이디 || alias name]`
 
-<br/>
-
 - 컨테이너 재시작  
     `$ docker restart [컨테이너 아이디 || alias name]`
     
 - 컨테이너/이미지 삭제  
-    `$ docker rm -f [컨테이너 아이디]` // 컨테이너 삭제
+    `$ docker rm -f [컨테이너 아이디]` // 컨테이너 삭제  
     `$ docker rmi [이미지 이름]` // 이미지  삭제
-    
-<br/>
