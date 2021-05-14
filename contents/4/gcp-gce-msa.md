@@ -547,19 +547,15 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |`--it`|-i와 -t를 동시에 사용한 것으로 터미널 입력을 위한 옵션|
     |`–link`|컨테이너 연결 \[컨테이너명:별칭\]|
 
-    <br/>
+<br/>
 
+4. 실행 확인  
     `docker ps` 명령어를 사용하여 실행중인 컨테이너를 확인해봅니다.  
     (`-a` 옵션 사용시 전체 컨테이너 확인이 가능합니다)  
     
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-ps.png" width="1100"/>|
     |-|
-    |도커 컨테이너 실행 결과|  
-
-<br/>
-
-4. 실행 확인  
-    
+    |도커 컨테이너 실행 결과| 
 
 <br/><br/>
 
