@@ -556,7 +556,23 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-ps.png" width="1100"/>|
     |-|
     |도커 컨테이너 실행 결과| 
-
+    
+    <br/>
+    
+    백그라운드로 실행되는 컨테이너 내부로 진입하기 위해서는 다음 명령어를 사용합니다.
+    
+    `docker exec -it [이미지 이름 || 컨테이너 아이디] /bin/bash`  
+    `docker exec -it -u 0 [이미지 이름 || 컨테이너 아이디] /bin/bash` // 루트권한 접속
+    
+    예시 
+    
+    ```
+    docker exec -it 29cafc7d0a50 /bin/bash
+    ```
+    
+    + `-i` 는 interactive 라는 뜻으로, 컨테이너와 상호적으로 통신하겠다는 뜻입니다.
+    + `-t` 는 tty(가상콘솔) 를 사용하겠다는 뜻입니다.
+    
 <br/><br/>
 
 ### GCP 방화벽 설정
