@@ -206,6 +206,65 @@
 4. 도커 허브에 push 하기  
     빌드된 이미지를 [도커 허브 저장소](https://hub.docker.com/)에 저장해보겠습니다.    
     
+    <br/>
+    
+    (원격지)터미널로 돌아와 다음 명령을 입력하여 도커허브에 로그인합니다.  
+    (도커 허브 아이디/패스워드를 입력합니다)
+        
+    `
+    $ docker login
+    `
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-login.png" width="800"/>|
+    |-|
+    |도커 허브 터미널 로그인| 
+    
+    <br/>
+    
+    도커 이미지에 `tag` 를 지정합니다.
+    
+    `
+    $ docker tag [이미지 이름] [도커 허브 유저 아이디]/[도커 허브 저장소 이름]
+    `
+    
+    예시
+    
+    ```
+    docker tag hellobuild:0.1 cholnh1/test-repo
+    ```
+    
+    <br/>
+        
+    태그가 적용된 이미지를 도커 저장소에 `push` 합니다.
+    
+    `
+    $ docker push [도커 허브 유저 아이디]/[도커 허브 저장소 이름]
+    `
+    
+    예시
+    
+    ```
+    docker push cholnh1/test-repo
+    ```
+    
+    <br/>
+
+    저장된 이미지를 `pull` 명령을 사용하여 어느 컨테이너에서든 사용할 수 있습니다.  
+    
+    <br/>
+    
+    예시
+    
+    ```
+    docker pull cholnh1/hello-repo:latest
+    ```
+    
+    또는
+    
+    ```
+    docker run -p 8080:8080 -d --rm cholnh1/hello-repo:latest
+    ```     
+    
 <br/><br/>
 
 ### 자주쓰는 도커 파일 명령어
