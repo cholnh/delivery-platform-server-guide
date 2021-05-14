@@ -590,7 +590,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     $ docker login
     `
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-login.png" width="900"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-login.png" width="800"/>|
     |-|
     |도커 허브 터미널 로그인| 
 
@@ -622,7 +622,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     docker push cholnh1/hello-repo
     ```
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-push.png" width="1000"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-docker-push.png" width="900"/>|
     |-|
     |도커 허브 push| 
     
