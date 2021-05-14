@@ -656,11 +656,44 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
 <br/><br/>
 
 ### GCP 방화벽 설정
-vpc 네트워크 - 방화벽 - 방화벽 규칙 만들기
-- 방향 : 수신
-- IP 범위 : 0.0.0.0/0 (전체)
-- 프로토콜 및 범위 : tcp 8080-8081 등
+- `vpc 네트워크` - `방화벽` 에 들어갑니다.
 
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vpc-firewall-menu.png" width="500"/>|
+    |-|
+    |GCP 방화벽| 
+    
+    <br/>
+    
+    `방화벽 규칙 만들기` 를 선택합니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-vpc-firewall-menu-2.png" width="500"/>|
+    |-|
+    |GCP 방화벽 만들기| 
+
+<br/>
+
+- 규칙을 작성합니다.  
+
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-firewall-form-1.png" width="600"/>|
+    |-|
+    |GCP 방화벽 규칙 작성| 
+
+    + 적절한 `규칙 이름`을 작성합니다.
+    + 트레픽 방향은 인바운드의 경우 `수신`, 아웃바운드의 경우 `송신` 으로 합니다.
+    
+    <br/>
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-firewall-form-2.png" width="600"/>|
+    |-|
+    |GCP 방화벽 규칙 작성| 
+    
+    + 규칙이 적용되는 인스턴스 `대상`을 지정할 수 있습니다.  
+        저는 `네트워크의 모든 인스턴스` 를 대상으로 방화벽 규칙을 적용하였습니다.
+    + `소스 IP 범위`는 허용 IP 를 지정하여 트레픽을 필터링합니다. (CIDR 표기법으로 적습니다)  
+        전체 IP 를 허용하기 위해 `0.0.0.0/0` 을 기입하였습니다.
+    + 허용할 포트를 아래 `프로토콜 및 포트` 칸에 적습니다.  
+        `tcp` 포트번호 `8080` 부터 `8085` 를 허용하겠습니다.
+        
 <br/><br/>
 
 ### 도커 컨테이너 종료
