@@ -248,8 +248,41 @@
     
 <br/>
     
+- `ENTRYPOINT`  
+    컨테이너가 시작될 때 시작할 명령어를 지정합니다.  
+    (`docker run` 또는 `docker start` 명령 으로 컨테이너 생성/시작할 때 해당 스크립트가 실행됩니다)  
+    Dockerfile 에서 단 한번만 사용할 수 있습니다.  
+    따옴표로 구분되는 형식은 매개 변수를 지정하기 위해 띄어 쓰는것과 같은 효과입니다.
+    + `ENTRYPOINT ["java", "-jar", "/app.jar"]`
+    + `ENTRYPOINT ["npm", "run", "serve"]`
+    
+<br/>
+    
 - `CMD`  
     컨테이너가 시작될 때 시작할 명령어를 지정합니다.  
     한 번만 사용할 수 있으며, 주로 docker image 로 빌드된 application 을 실행할 때 쓰입니다.  
     + `CMD echo "hello world!"`
     + `CMD apachectl -DFOREGROUND`
+    + `CMD ["npm", "run", "serve"]`
+    
+    > `CMD` 와 `ENTRYPOINT` 는 컨테이너가 생성될 때 실행되는 것은 동일하지만 `docker run` 명령에서 동작 방식이 다릅니다.  
+    > `docker run` 명령에서 실행할 파일을 설정하면 `CMD` 명령은 무시됩니다.
+    
+<br/>
+    
+- `ARG`  
+    도커파일 빌드시에 설정하는 환경 변수들을 지정할 수 있는 명령어입니다.  
+    + `ARG JAR_FILE=helloworld.jar`
+    
+<br/>
+
+- `VOLUME`  
+    호스트의 디렉토리를 컨테이너에 연결하는 명령어입니다.  
+    여러 설정파일, 데이터 등을 컨테이너에서 사용할 수 있게 해줍니다.  
+    주로 로그 수집과 같은 데이터 저장(호스트에 저장)에 쓰입니다.
+    + `VOLUME /helloworldVolume`
+    + `VOLUME 호스트디렉토리 컨테이너디렉토리`
+    + `VOLUME ["/data", "/var/log"]`
+    
+<br/>
+
