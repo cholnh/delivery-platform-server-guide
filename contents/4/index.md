@@ -34,9 +34,6 @@
 
 
 ## 4. 전략과 도구
+해당 프로젝트는 가상 비즈니스 상황을 가정하고 가상 서비스에 대한 API 서버를 구현합니다.  
 
 <br/>
-
-### GCE (Google Compute Engine)
-
-\[ GCE 위에 모놀리식 스프링부트 실행시키기 \] 예제는 [이곳을](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/4/gcp-gce-msa.md#GCE-위에-모놀리식-스프링부트-실행시키기) 참조해주세요.
