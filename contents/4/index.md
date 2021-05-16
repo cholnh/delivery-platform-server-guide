@@ -34,6 +34,38 @@
 
 
 ## 4. 전략과 도구
-해당 프로젝트는 가상 비즈니스 상황을 가정하고 가상 서비스에 대한 API 서버를 구현합니다.  
+앞서 설계한 내용을 바탕으로 어떤 전략과 도구들을 사용하여 구현을 할지 선택해보겠습니다.  
 
 <br/>
+
+### 외부 인프라
+
+- GCP
+
+- Docker
+
+- Kubernetes
+
+- Google Cloud Datastore
+
+- ElasticSearch
+
+- ELK
+
+- CI/CD
+
+- RabbitMQ
+
+- Git/Github
+
+- 보안 전략
+
+<br/><br/>
+
+### 내부 서비스
+
+- Spring boot
+
+- JPA
+
+- 테스트 전략
