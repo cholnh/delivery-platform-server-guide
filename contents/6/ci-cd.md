@@ -257,7 +257,11 @@ jobs:
 <br/>
 
 이제 복사한 내용을 `commit` 하면 자동으로 Action workflow 가 실행됩니다.  
-Actions UI 에서 workflow 실행과정이 모니터링 됩니다.
+Actions UI 에서 workflow 실행 과정이 모니터링 됩니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-workflow-ui.png" width="800"/>|
+|-|
+|workflow 실행 결과|
 
 <br/><br/>
 
