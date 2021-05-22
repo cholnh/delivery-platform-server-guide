@@ -225,7 +225,7 @@ jobs:
         <br/>
         
         + `steps.name`  
-            step 의 이름을 명시합니다.
+            step 의 이름을 명시합니다.  
             
         <br/>
         
