@@ -57,6 +57,24 @@ Workflow 만드는 방법은 간단합니다.
 
 <br/>
 
+위 방법처럼 직접 파일을 생성하지 않아도 됩니다.  
+Github 에서 제공하는 Actions UI 를 이용해 보겠습니다.
+
+<br/>
+
+Github Repository 탭에 `Actions` 메뉴로 들어갑니다.  
+왼쪽에 `New workflow` 를 눌러 새로운 workflow 를 만들 수 있습니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-file-location.png" width="500"/>|
+|-|
+|workflow 파일 생성|
+
+<br/>
+
+`set up a workflow yourself` 를 눌러 커스텀 workflow 파일을 생성합니다.  
+
+<br/>
+
 파일 내용은 다음을 복사합니다.
 
 ```yaml
@@ -230,3 +248,199 @@ jobs:
                       npm test
                       npm build
             ```
+
+<br/>
+
+이외에 Github Actions 문법은 공식문서를 통해 확인할 수 있습니다.  
+[Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
+
+<br/>
+
+이제 복사한 내용을 `commit` 하면 자동으로 Action workflow 가 실행됩니다.  
+Actions UI 에서 workflow 실행과정이 모니터링 됩니다.
+
+<br/><br/>
+
+### CI/CD 파이프라인 Workflow
+기본적인 Github Actions 내용을 숙지했다면 CI/CD 자동화 파이프라인을 구축해보겠습니다.
+
+<br/>
+
+Workflow 는 다음과 같습니다.  
+
+```yaml
+name: Build-Deploy
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+      - "**.md"
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # "master" 체크아웃
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Java + Gradle 기반 앱 테스트 및 빌드
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Source Code Test And Build
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+
+      # Gcloud CLI 세팅
+      - name: Set up Gcloud
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          export_default_credentials: true
+
+      # GCR 연결 위한 인증 작업 실행
+      - name: Set Auth GCR
+        run: gcloud --quiet auth configure-docker
+
+      # GCR에서 이전 버전 참고하여 다음 버전 만든 후, 이미지 빌드 및 푸쉬
+      - name: Build Docker Image And Delivery To GCR
+        run: |
+          IMAGE=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.REPOSITORY_NAME }}
+          INPUT=$(gcloud container images list-tags --format='get(tags)' $IMAGE)
+          LATEST_TAG=$(echo ${INPUT[0]} | awk -F ' ' '{print $1}' | awk -F ';' '{print $1}')
+          ADD=0.01
+          VERSION=$(echo "${LATEST_TAG} $ADD" | awk '{print $1 + $2}')
+          NEW_VERSION=$(printf "%.2g\n" "${VERSION}")
+          docker build --tag $IMAGE:${NEW_VERSION} .
+          docker push $IMAGE:${NEW_VERSION}
+          docker tag $IMAGE:${NEW_VERSION} $IMAGE:latest
+          docker push $IMAGE:latest
+
+      # 작업 결과 슬랙 전송
+      - name: Result to Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          author_name: MSA Build Result
+        if: always()
+
+  deploy:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+
+    steps:
+      # SSH 접속을 통한 직접 배포
+      - name: Deploy to GCE
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: |
+            CONTAINER_NAME=hello-container
+            IMAGE=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.REPOSITORY_NAME }}
+            sudo gcloud --quiet auth configure-docker
+            sudo docker ps -q --filter "name=$CONTAINER_NAME" | grep -q . && sudo docker stop $CONTAINER_NAME
+            sudo docker system prune -a -f
+            sudo docker run -d --name "$CONTAINER_NAME" --rm -p ${{ secrets.CONTAINER_PORT }}:${{ secrets.CONTAINER_PORT }} $IMAGE:latest
+
+      # 작업 결과 슬랙 전송
+      - name: Result to Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          author_name: MSA Deploy Result
+        if: always()
+```
+
+<br/>
+
+위 명령어 하나하나 살펴보겠습니다.  
+우선 트리거 조건을 명시하는 `on` 부분입니다.  
+`paths-ignore` 를 통해 commit 시 무시되는 파일 확장자를 명시합니다.
+
+```yaml
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+      - "**.md"
+```
+
+<br/>
+
+`env` 는 workflow 내부에서 사용되는 환경변수입니다.  
+아래 action 에서 사용될 각 변수들에 값을 넣어줍니다.  
+`${{ secrets.시크릿변수 }}` 문법을 통해 `Github Secret` 에서 설정한 시크릿을 가져올 수 있습니다.
+
+```yaml
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+```
+
+<br/>
+
+runner 환경은 리눅스 `ubuntu` 를 사용하여 실행되게 합니다.
+
+```yaml
+runs-on: ubuntu-latest
+```
+ 
+<br/>
+
+Github 저장소에서 소스코드를 체크아웃 합니다.  
+체크아웃된 코드는 runner 의 가상 실행 환경에 위치됩니다.
+
+```yaml
+# "master" 체크아웃
+- name: Checkout
+uses: actions/checkout@v2
+```
+
+<br/>
+
+해당 프로젝트는 Java 프로젝트를 기반으로 진행되므로 `JDK 1.8` 환경을 runner 에 세팅해줍니다.  
+체크아웃 한 코드를 `gradlew` 를 통해 Test 및 Build 작업을 실행합니다.
+
+```yaml
+# Java + Gradle 기반 앱 테스트 및 빌드
+- name: Set up JDK 1.8
+uses: actions/setup-java@v1
+with:
+  java-version: 1.8
+
+- name: Source Code Test And Build
+run: |
+  chmod +x gradlew
+  ./gradlew build
+```
+
+<br/>
+
+```yaml
+
+```
