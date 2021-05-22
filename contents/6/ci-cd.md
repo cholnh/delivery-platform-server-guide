@@ -91,6 +91,8 @@ jobs:
 
 <br/>
 
+위 명령어를 하나하나 살펴보겠습니다.
+
 - `name`  
     workflow 의 이름을 명시합니다.
     
@@ -130,3 +132,101 @@ jobs:
     
 <br/>
 
+- `jobs`  
+    job 은 기본 실행 단위입니다.  
+    job 들은 모두 병렬적으로 실행됩니다.
+    
+    ```yaml
+    jobs:
+      some-job-id:
+        ...
+      some-job-id-2:
+        ...
+    ```
+    
+    + `runs-on`  
+        해당 job 을 가상 실행할 컴퓨팅 환경인 `runner` 를 명시합니다.  
+        ubuntu-latest, macos-latest, windows-latest 등으로 실행 가능합니다.
+        
+        ```yaml
+        jobs:
+          some-job-1:
+            runs-on: ubuntu-latest
+        ```
+        
+    <br/>
+    
+    + `strategy`  
+        여러 환경에서의 실행을 위해 build matrix 를 설정합니다.  
+        각기 다른 환경들을 명시하여 같은 job 을 동시에 실행할 수 있습니다.  
+        ```yaml
+        jobs:
+          some-job-1:
+            strategy:
+              matrix:
+                node-version: [10.x, 12.x]
+        ```
+        
+    <br/>
+    
+    + `steps`  
+        job 내부 실행 과정을 명시합니다.  
+        + Github 저장소 코드 체크아웃
+        + Github Marketplace 에서 import 한 actions 실행
+        + shell 명령어 실행
+        + 도커 이미지 빌드/배포
+        + aws/gcp 등의 인프라에 서비스 배포 등
+        
+        각 step 은 job 의 컴퓨팅 자원에서 독립적인 프로세스로 동작하며,  
+        여러가지 명령들을 순차적으로 실행합니다.  
+        (또한 runner 의 파일 시스템에 접근할 수 있습니다)
+        
+        ```yaml
+        jobs:
+          some-job-1:
+            runs-on: ubuntu-latest
+            steps:
+              # Github 저장소에 저장된 소스코드를 체크아웃
+              - name: Checkout
+                uses: actions/checkout@v2
+        
+              # Java + Gradle 기반 앱 테스트 및 빌드
+              - name: Set up JDK 1.8
+                uses: actions/setup-java@v1
+                with:
+                  java-version: 1.8
+        
+              - name: Source Code Test And Build
+                run: |
+                  chmod +x gradlew
+                  ./gradlew build
+        ```
+        
+        위 workflow 는 Github 에 저장된 소스코드를 체크아웃하고 gradlew 를 통해 build 작업이 순차적으로 실행됩니다.
+        
+        <br/>
+        
+        + `steps.name`  
+            step 의 이름을 명시합니다.
+            
+        <br/>
+        
+        + `steps.uses`  
+            해당 스텝에서 사용할 action 을 명시합니다.  
+            [Github Marketplace](https://github.com/marketplace) 에 많은 action 들이 있습니다.  
+            
+        <br/>
+        
+        + `steps.run`  
+            runner 의 shell 을 이용하여 명시된 명령어 나열을 실행합니다.  
+            
+            ```yaml
+            jobs:
+              some-job-1:
+                steps:
+                  - name: My First Step
+                    run: | ## 명령어를 여러 줄 사용하기 위해서는 파이프(|) 를 입력합니다.
+                      npm install
+                      npm test
+                      npm build
+            ```
