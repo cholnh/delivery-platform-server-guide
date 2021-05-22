@@ -65,7 +65,7 @@ Github 에서 제공하는 Actions UI 를 이용해 보겠습니다.
 Github Repository 탭에 `Actions` 메뉴로 들어갑니다.  
 왼쪽에 `New workflow` 를 눌러 새로운 workflow 를 만들 수 있습니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-file-location.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-actions-menu.png" width="500"/>|
 |-|
 |workflow 파일 생성|
 
