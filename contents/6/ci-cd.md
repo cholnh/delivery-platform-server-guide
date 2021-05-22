@@ -394,7 +394,8 @@ on:
 
 `env` 는 workflow 내부에서 사용되는 환경변수입니다.  
 아래 action 에서 사용될 각 변수들에 값을 넣어줍니다.  
-`${{ secrets.시크릿변수 }}` 문법을 통해 `Github Secret` 에서 설정한 시크릿을 가져올 수 있습니다.
+`${{ secrets.시크릿변수 }}` 문법을 통해 `Github Secret` 에서 설정한 시크릿을 가져올 수 있습니다.  
+`GITHUB_TOKEN`, `SLACK_WEBHOOK_URL` 변수들에 대한 설명은 아래에서 다루겠습니다.
 
 ```yaml
 env:
@@ -418,7 +419,7 @@ Github 저장소에서 소스코드를 체크아웃 합니다.
 ```yaml
 # "master" 체크아웃
 - name: Checkout
-uses: actions/checkout@v2
+  uses: actions/checkout@v2
 ```
 
 <br/>
@@ -429,18 +430,109 @@ uses: actions/checkout@v2
 ```yaml
 # Java + Gradle 기반 앱 테스트 및 빌드
 - name: Set up JDK 1.8
-uses: actions/setup-java@v1
-with:
-  java-version: 1.8
+  uses: actions/setup-java@v1
+  with:
+    java-version: 1.8
 
 - name: Source Code Test And Build
-run: |
-  chmod +x gradlew
-  ./gradlew build
+  run: |
+    chmod +x gradlew
+    ./gradlew build
 ```
 
 <br/>
 
-```yaml
+GCP 를 제어하기 위한 Gcloud CLI 를 세팅합니다.  
+`service_account_key` 와 `project_id` 는 GCP 인증을 위해 GCP 서비스 계정에서 받아와 설정해줘야 하는 정보들입니다.  
+Secret 설정은 아래에서 자세하게 다루겠습니다.
 
+```yaml
+# Gcloud CLI 세팅
+- name: Set up Gcloud
+  uses: google-github-actions/setup-gcloud@master
+  with:
+    version: '290.0.1'
+    service_account_key: ${{ secrets.GCP_SA_KEY }}
+    project_id: ${{ secrets.GCP_PROJECT_ID }}
+    export_default_credentials: true
 ```
+
+<br/>
+
+GCR (Google Container Registry) 은 GCP 에서 제공하는 컨테이너 이미지 레지스트리(저장소) 입니다.  
+Docker 이미지를 빌드하여 저장하기 위해 GCR 을 사용합니다.  
+아래 명령어는 GCR 연결을 위한 선 인증 작업을 실행합니다.  
+`run` 명령으로 실행되는 `gcloud` 사용을 위해 위에서 Gcloud CLI 세팅작업이 선결되어야 합니다.
+
+```yaml
+# GCR 연결 위한 인증 작업 실행
+- name: Set Auth GCR
+  run: gcloud --quiet auth configure-docker
+```
+
+<br/>
+
+shell 명령을 사용하여 GCR 에 도커 이미지를 push 하는 과정입니다.  
+GCR 에 저장되어 있는 최근 이미지의 버전을 얻어와 버전업한 후 도커 이미지를 빌드하여 저장소로 푸시하는 과정이 이뤄집니다.
+
+```yaml
+# GCR에서 이전 버전 참고하여 다음 버전 만든 후, 이미지 빌드 및 푸쉬
+- name: Build Docker Image And Delivery To GCR
+  run: |
+    IMAGE=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.REPOSITORY_NAME }}
+    INPUT=$(gcloud container images list-tags --format='get(tags)' $IMAGE)
+    LATEST_TAG=$(echo ${INPUT[0]} | awk -F ' ' '{print $1}' | awk -F ';' '{print $1}')
+    ADD=0.01
+    VERSION=$(echo "${LATEST_TAG} $ADD" | awk '{print $1 + $2}')
+    NEW_VERSION=$(printf "%.2g\n" "${VERSION}")
+    docker build --tag $IMAGE:${NEW_VERSION} .
+    docker push $IMAGE:${NEW_VERSION}
+    docker tag $IMAGE:${NEW_VERSION} $IMAGE:latest
+    docker push $IMAGE:latest
+```
+
+<br/>
+
+Slack 채널로 해당 작업 결과를 전송합니다.  
+
+```yaml
+# 작업 결과 슬랙 전송
+- name: Result to Slack
+  uses: 8398a7/action-slack@v3
+  with:
+    status: ${{ job.status }}
+    fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+    author_name: MSA Build Result
+  if: always()
+```
+
+<br/>
+
+GCE (Google Compute Engine) 로 SSH 접속하여 도커 이미지를 pull 하여 컨테이너에 어플리케이션이 포함된 이미지를 실행합니다.  
+`script` 부분은 SSH 접속후 해당 컨테이너에서 실행할 스크립트를 명시합니다.  
+컨테이너 내부에서 GCR 접속을 위해 `gcloud --quiet auth configure-docker` 명령을 통해 접근 권한을 얻습니다.  
+기존 컨테이너를 정지/삭제한 뒤 버전업된 새로운 이미지를 받아와 실행시킵니다.  
+
+```yaml
+# SSH 접속을 통한 직접 배포
+- name: Deploy to GCE
+  uses: appleboy/ssh-action@master
+  with:
+    host: ${{ secrets.SSH_HOST }}
+    username: ${{ secrets.SSH_USERNAME }}
+    key: ${{ secrets.SSH_KEY }}
+    passphrase: ${{ secrets.SSH_PASSPHRASE }}
+    script: |
+      CONTAINER_NAME=hello-container
+      IMAGE=gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.REPOSITORY_NAME }}
+      sudo gcloud --quiet auth configure-docker
+      sudo docker ps -q --filter "name=$CONTAINER_NAME" | grep -q . && sudo docker stop $CONTAINER_NAME
+      sudo docker system prune -a -f
+      sudo docker run -d --name "$CONTAINER_NAME" --rm -p ${{ secrets.CONTAINER_PORT }}:${{ secrets.CONTAINER_PORT }} $IMAGE:latest
+```
+
+<br/><br/>
+
+### Github Secret 설정
+
+### Slack 알림 설정
