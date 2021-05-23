@@ -535,8 +535,61 @@ GCE (Google Compute Engine) 로 SSH 접속하여 도커 이미지를 pull 하여
       sudo docker run -d --name "$CONTAINER_NAME" --rm -p ${{ secrets.CONTAINER_PORT }}:${{ secrets.CONTAINER_PORT }} $IMAGE:latest
 ```
 
+위 내용대로 workflow 설정파일을 생성합니다.   
+이제 내부 환경변수에 들어갈 `Secret` 값들을 설정해보겠습니다.
+
 <br/><br/>
 
 ### Github Secret 설정
+Github 에서는 프로젝트 내에서 사용되는 민감한 정보(가령 보안과 관련된)들을 안전하게 관리해줍니다.  
+
+<br/>
+
+우선 Github Repository 에 `Setting` - 왼쪽 메뉴 중 `Secrets` 에 들어갑니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-menu.png" width="800"/>|
+|-|
+|Github Secret|
+
+<br/>
+
+오른쪽 상단의 `New repository secret` 을 눌러 새로운 secret 을 생성합니다.  
+`Name` 부분에 secret 변수명을 입력하고, `Value` 부분에 secret 변수의 값을 입력합니다.
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-new-secret.png" width="600"/>|
+|-|
+|Github Secret|
+
+<br/>
+
+위 예시와 같이 생성된 secret 은 다음과 같은 형태로 사용됩니다.
+
+```yaml
+${{ secrets.MY_SECRET_VALUE }}
+```
+
+<br/>
+
+이제 위 workflow 에서 사용된 secret 을 하나하나 살펴보겠습니다.
+
+- `GCP_PROJECT_ID`  
+    GCP 프로젝트 생성 당시 발급된 고유 ID 를 등록합니다.  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-gcp-id.png" width="600"/>|
+    |-|
+    |GCP PROJECT ID|
+    
+<br/>
+    
+- GCE_INSTANCE_NAME
+- GCE_INSTANCE_ZONE
+- GCP_SA_KEY
+- REPOSITORY_NAME
+- CONTAINER_PORT
+- SSH_HOST
+- SSH_USERNAME
+- SSH_KEY
+- SSH_PASSPHRASE
+- SLACK_WEBHOOK_URL
 
 ### Slack 알림 설정
