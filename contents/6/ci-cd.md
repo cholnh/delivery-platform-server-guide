@@ -559,7 +559,7 @@ Github 에서는 프로젝트 내에서 사용되는 민감한 정보(가령 보
 오른쪽 상단의 `New repository secret` 을 눌러 새로운 secret 을 생성합니다.  
 `Name` 부분에 secret 변수명을 입력하고, `Value` 부분에 secret 변수의 값을 입력합니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-new-secret.png" width="600"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-new-secret.png" width="700"/>|
 |-|
 |Github Secret|
 
@@ -578,6 +578,10 @@ ${{ secrets.MY_SECRET_VALUE }}
 - `GCP_PROJECT_ID`  
     GCP 프로젝트 생성 당시 발급된 고유 ID 를 등록합니다.  
     
+    |Secret Name|Secret Value|
+    |-|-|
+    |`GCP_PROJECT_ID`|`mindful-folio-309712`|
+    
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-gcp-id.png" width="600"/>|
     |-|
     |GCP PROJECT ID|
@@ -586,6 +590,10 @@ ${{ secrets.MY_SECRET_VALUE }}
     
 - `GCE_INSTANCE_NAME`  
     GCE 인스턴스 이름을 등록합니다.
+    
+    |Secret Name|Secret Value|
+    |-|-|
+    |`GCE_INSTANCE_NAME`|`instance-test-2`|
    
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-instance-name.png" width="500"/>|
     |-|
@@ -595,7 +603,11 @@ ${{ secrets.MY_SECRET_VALUE }}
  
 - `GCE_INSTANCE_ZONE`  
     GCE 인스턴스 영역을 등록합니다.
-   
+    
+    |Secret Name|Secret Value|
+    |-|-|
+    |`GCE_INSTANCE_ZONE`|`asia-northeast3-a`|
+    
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-instance-zone.png" width="500"/>|
     |-|
     |GCE INSTANCE ZONE|
@@ -641,10 +653,20 @@ ${{ secrets.MY_SECRET_VALUE }}
     + 리눅스 : `base64 [sa key 경로] > [인코딩 결과 경로]`
     + macOS : `base64 -i [sa key 경로] -o [인코딩 결과 경로]`
     
+    <br/>
+    
+    |Secret Name|Secret Value|
+    |-|-|
+    |`GCP_SA_KEY`|`[ base64 인코딩된 SA KEY ]`|
+    
 <br/>
 
 - `REPOSITORY_NAME`  
-    해당 프로젝트의 Github Repository 저장소 이름을 등록합니다.
+    해당 프로젝트의 Github Repository 저장소 이름을 등록합니다.  
+    
+    |Secret Name|Secret Value|
+    |-|-|
+    |`REPOSITORY_NAME`|`msa-helloworld`|
     
 <br/>
 
@@ -652,16 +674,28 @@ ${{ secrets.MY_SECRET_VALUE }}
     Docker 컨테이너에서 EXPOSE 될 포트를 지정합니다.  
     기본 어플리케이션 작동 테스트가 목적이므로 `8080` 값을 등록합니다.
     
+    |Secret Name|Secret Value|
+    |-|-|
+    |`CONTAINER_PORT`|`8080`|
+    
 <br/>
 
 - `SSH_HOST`  
     GCE 인스턴스에 SSH 접속을 위한 값입니다.  
     GCE 인스턴스 메인화면에 적혀져있는 `외부 IP` 를 등록합니다. 
     
+    |Secret Name|Secret Value|
+    |-|-|
+    |`SSH_HOST`|`34.64.154.29`|
+    
 <br/>
 
 - `SSH_USERNAME`  
     GCP 프로젝트를 생성한 자신의 구글 ID 를 등록합니다.
+    
+    |Secret Name|Secret Value|
+    |-|-|
+    |`SSH_USERNAME`|`nzzi.dev`|
     
 <br/>
 
@@ -710,6 +744,10 @@ ${{ secrets.MY_SECRET_VALUE }}
     |-|
     |GCP SSH 공개키 등록 예시|
     
+    |Secret Name|Secret Value|
+    |-|-|
+    |`SSH_KEY`|`[ SSH Private KEY ]`|
+    
     <br/>
     
     다른 플랫폼에서의 접속방법은 다음을 참고바랍니다.  
@@ -719,6 +757,10 @@ ${{ secrets.MY_SECRET_VALUE }}
 
 - `SSH_PASSPHRASE`  
     위 비밀번호 등록 과정에서 입력한 `passphrase` 를 등록합니다.
+    
+    |Secret Name|Secret Value|
+    |-|-|
+    |`SSH_PASSPHRASE`|`[ SSH PASSPHRASE ]`|
     
 <br/>
 
@@ -771,5 +813,9 @@ ${{ secrets.MY_SECRET_VALUE }}
     <br/>
     
     복사한 `Webhook URL` 은  `secret` 에 등록해줍니다.
+    
+    |Secret Name|Secret Value|
+    |-|-|
+    |`SLACK_WEBHOOK_URL`|`https://hooks.slack.com/services/ASDASDASD/ZXCZXCZXC/QWEQWEQWE`|
     
 <br/><br/>
