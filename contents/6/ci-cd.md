@@ -724,6 +724,10 @@ ${{ secrets.MY_SECRET_VALUE }}
     
     이때 생성된 `private key` 를 `secret` 으로 등록합니다.
     
+    |Secret Name|Secret Value|
+    |-|-|
+    |`SSH_KEY`|`[ SSH Private KEY ]`|
+    
     <br/>
     
     여기서 끝이 아닙니다.  
@@ -743,10 +747,6 @@ ${{ secrets.MY_SECRET_VALUE }}
     |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-input.png" width="600"/>|
     |-|
     |GCP SSH 공개키 등록 예시|
-    
-    |Secret Name|Secret Value|
-    |-|-|
-    |`SSH_KEY`|`[ SSH Private KEY ]`|
     
     <br/>
     
