@@ -819,3 +819,35 @@ ${{ secrets.MY_SECRET_VALUE }}
     |`SLACK_WEBHOOK_URL`|`https://hooks.slack.com/services/ASDASDASD/ZXCZXCZXC/QWEQWEQWE`|
     
 <br/><br/>
+
+### Docker file
+Spring boot 로 제작한 자바 어플리케이션을 실행시키는 간단한 도커 이미지 입니다.
+
+```dockerfile
+FROM java:8
+VOLUME /helloworldVolume
+EXPOSE 8080
+ARG JAR_FILE=build/libs/helloworld-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+```
+
+<br/>
+
+해당 파일을 Github 저장소 최상위에 위치시킵니다.
+
+<br/><br/>
+
+### 동작 확인
+commit 한 내용들을 저장소에 `push` 할 경우,  
+workflow 의 `on` 트리거 조건에 detection 되어 workflow 가 자동 실행됩니다.
+
+<br/>
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-result-1.png" width="800"/>|
+|-|
+|Workflow 실행 결과|
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-result-2.png" width="800"/>|
+|-|
+|Workflow 실행 결과|
