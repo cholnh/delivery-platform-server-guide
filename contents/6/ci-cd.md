@@ -28,6 +28,9 @@ Github Actions 를 이용한 CI/CD 파이프라인 구축하기 위해서 다음
 - GCR (Google Container Registry)
 - Slack Repository
 
+GCE 인스턴스 생성 및 Docker 이미지 관리에 대해서는 아래링크를 참조바랍니다.  
+[GCE 위에 모놀리식 스프링부트 실행시키기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/gcp-gce-msa.md#GCE-위에-모놀리식-스프링부트-실행시키기)
+
 <br/><br/>
 
 ### 간단한 Workflow 만들기
@@ -581,15 +584,192 @@ ${{ secrets.MY_SECRET_VALUE }}
     
 <br/>
     
-- GCE_INSTANCE_NAME
-- GCE_INSTANCE_ZONE
-- GCP_SA_KEY
-- REPOSITORY_NAME
-- CONTAINER_PORT
-- SSH_HOST
-- SSH_USERNAME
-- SSH_KEY
-- SSH_PASSPHRASE
-- SLACK_WEBHOOK_URL
+- `GCE_INSTANCE_NAME`  
+    GCE 인스턴스 이름을 등록합니다.
+   
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-instance-name.png" width="500"/>|
+    |-|
+    |GCE INSTANCE NAME|
+   
+<br/>
+ 
+- `GCE_INSTANCE_ZONE`  
+    GCE 인스턴스 영역을 등록합니다.
+   
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-instance-zone.png" width="500"/>|
+    |-|
+    |GCE INSTANCE ZONE|
+   
+<br/>
 
-### Slack 알림 설정
+- `GCP_SA_KEY`  
+    GCP 프로젝트의 서비스 계정(Service Account) 를 등록합니다.  
+    외부에서 GCP 연결을 위해 `gcloud cli` 를 이용합니다.  
+    이때 서비스 계정을 통해 인증 과정을 거치게 됩니다. 
+    
+    <br/>
+    
+    우선 왼쪽 메뉴의 `IAM 및 관리자` - `서비스 계정` 으로 들어갑니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-sa-menu.png" width="400"/>|
+    |-|
+    |GCP SA|
+    
+    <br/>
+    
+    자신의 GCE 인스턴스 아이디에 해당하는 항목의 맨 오른쪽 점 세개 `작업` 부분을 누르고 `키 관리` 를 선택합니다.  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-sa-main.png" width="1000"/>|
+    |-|
+    |GCP SA|
+    
+    <br/>
+    
+    왼쪽 `키 추가` - `새 키 만들기` - `JSON` 을 선택한 뒤 - `만들기` 를 눌러 SA 키를 생성합니다.  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-secret-sa-key.png" width="800"/>|
+    |-|
+    |GCP SA|
+    
+    <br/>
+    
+    이때, 자동으로 다운로드 되는 파일 내용을 `base64` 인코딩을 한 후 `secret` 에 등록합니다.  
+    인코딩 변환 방법은 다음과 같습니다.
+        
+    + 인코딩 변환 사이트 : [https://www.base64decode.org/](https://www.base64decode.org/) 
+    + 윈도우 명령 프롬프트 : `certutil -encode [sa key 경로] [인코딩 결과 경로]`
+    + 리눅스 : `base64 [sa key 경로] > [인코딩 결과 경로]`
+    + macOS : `base64 -i [sa key 경로] -o [인코딩 결과 경로]`
+    
+<br/>
+
+- `REPOSITORY_NAME`  
+    해당 프로젝트의 Github Repository 저장소 이름을 등록합니다.
+    
+<br/>
+
+- `CONTAINER_PORT`  
+    Docker 컨테이너에서 EXPOSE 될 포트를 지정합니다.  
+    기본 어플리케이션 작동 테스트가 목적이므로 `8080` 값을 등록합니다.
+    
+<br/>
+
+- `SSH_HOST`  
+    GCE 인스턴스에 SSH 접속을 위한 값입니다.  
+    GCE 인스턴스 메인화면에 적혀져있는 `외부 IP` 를 등록합니다. 
+    
+<br/>
+
+- `SSH_USERNAME`  
+    GCP 프로젝트를 생성한 자신의 구글 ID 를 등록합니다.
+    
+<br/>
+
+- `SSH_KEY`  
+    GCE 인스턴스 SSH 접속 역시 인증과정에 필요한 KEY 등록이 필요합니다.  
+    
+    <br/>
+    
+    우선 터미널 또는 명령 프롬프트에 다음을 입력합니다.
+    
+    `
+    $ ssh-keygen -t rsa -f [KEY 경로] -C "[유저 아이디@gmail.com]" 
+    `
+    
+    예시  
+        
+    ```
+    ssh-keygen -t rsa -f ~/.ssh/rsa-gcp-key -C "nzzi.dev@gmail.com" 
+    ```
+    
+    <br/>
+    
+    비밀번호(passphrase) 등록 또한 해줍니다.
+    
+    <br/>
+    
+    이때 생성된 `private key` 를 `secret` 으로 등록합니다.
+    
+    <br/>
+    
+    여기서 끝이 아닙니다.  
+    생성된 `public key` 를 gcp 메타데이터에 등록해줘야 합니다.
+    
+    <br/>
+    
+    우선 GCP 왼쪽 메뉴에서 메타데이터 탭으로 들어가줍니다.  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-menu.png" width="250"/>|
+    |-|
+    |GCP 메타데이터 메뉴|
+    
+    `SSH 키` 탭을 선택해주고 `수정` - `항목 추가`를 선택해줍니다.  
+    위에서 생성한 `public key` 내용을 복사합니다.  
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/gcp/gce-msa/gcp-metadata-input.png" width="600"/>|
+    |-|
+    |GCP SSH 공개키 등록 예시|
+    
+    <br/>
+    
+    다른 플랫폼에서의 접속방법은 다음을 참고바랍니다.  
+    [GCE 인스턴스 컨테이너에 접속하기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/gcp-gce-msa.md#인스턴스-컨테이너에-접속하기)
+    
+<br/>
+
+- `SSH_PASSPHRASE`  
+    위 비밀번호 등록 과정에서 입력한 `passphrase` 를 등록합니다.
+    
+<br/>
+
+- `SLACK_WEBHOOK_URL`  
+    [SLACK](https://slack.com/intl/ko-kr/) 에 빌드 결과를 알림하기 위한 알림 URL 을 등록합니다.  
+    
+    <br/>
+    
+    우선 슬랙에 가입을 하고 워크스페이스를 생성해줍니다.  
+    (기존 워크스페이스도 상관없습니다)
+    
+    <br/>
+    
+    결과를 전송받을 채널을 지정한 후 (기본 채널도 상관없습니다)  
+    [Slack API 를 관리하는 곳](https://api.slack.com/apps)으로 이동합니다.
+    
+    <br/>
+    
+    `Create New App` 버튼을 눌러줍니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-slack-main.png" width="600"/>|
+    |-|
+    |SLACK Create New App|
+    
+    <br/>
+    
+    `From scratch` 선택한 후 적절한 App 이름을 적고 workspace 를 선택해줍니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-slack-newapp.png" width="500"/>|
+    |-|
+    |SLACK Create New App|
+    
+    <br/>
+    
+    `Incoming Webhooks` 을 선택하면 웹훅 URL 이 생성됩니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-slack-webhook-menu.png" width="700"/>|
+    |-|
+    |SLACK Incoming Webhooks|
+    
+    <br/>
+    
+    우측 상단에 토글 버튼을 `On` 으로 바꿔주고 아래에 `Webhook URL` 복사해준 뒤,  
+    `Add New Webhook to Workspace` 를 눌러 워크스페이스에 웹훅을 추가해줍니다.
+    
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-slack-webhook-on.png" width="700"/>|
+    |-|
+    |SLACK Add New Webhooks|
+    
+    <br/>
+    
+    복사한 `Webhook URL` 은  `secret` 에 등록해줍니다.
+    
+<br/><br/>

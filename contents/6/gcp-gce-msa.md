@@ -173,7 +173,7 @@ GCD 의 경우 NoSQL Database 로 완전관리형 Database 입니다.
     예시  
     
     ```
-    ssh-keygen -t rsa -f ~/.ssh/rsa-gcp-key -C "nzzi.dev@gmai.com" 
+    ssh-keygen -t rsa -f ~/.ssh/rsa-gcp-key -C "nzzi.dev@gmail.com" 
     ```
     
     + 비밀번호 추가 옵션은 선택입니다.
