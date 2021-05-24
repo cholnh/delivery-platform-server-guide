@@ -844,10 +844,14 @@ workflow 의 `on` 트리거 조건에 detection 되어 workflow 가 자동 실�
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-result-1.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-result-ui-1.png" width="800"/>|
 |-|
 |Workflow 실행 결과|
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-result-2.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-result-ui-2.png" width="800"/>|
+|-|
+|Workflow 실행 결과|
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/cicd/cicd-result-ui-3.png" width="1000"/>|
 |-|
 |Workflow 실행 결과|
