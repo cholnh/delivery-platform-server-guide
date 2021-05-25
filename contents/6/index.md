@@ -38,6 +38,8 @@
 
 <br/>
 
+### 클라우드 인프라
+
 Google Cloud Platform (이하 GCP) 에서는 여러 인프라 서비스를 제공합니다.  
 가상 단일 인스턴스를 제공하는 Google Compute Engine (이하 GCE) 부터,  
 Kubernetes 를 쉽게 사용하도록 관리형으로 제공하는 솔루션인 Google Kubernetes Engine (이하 GKE),  
@@ -47,11 +49,26 @@ Kubernetes 를 쉽게 사용하도록 관리형으로 제공하는 솔루션인 
 
 GCE 는 가상 인스턴스를 제공하지만 컨테이너 기술에 적합한 컴퓨팅환경(Container-Optimized OS(COS))으로 설정할 수 있습니다.  
 GCE 환경에 가장 적합한 아키텍처는 모노리식 아키텍처라 생각합니다.  
-(참고 : [GCE 위에 모놀리식 스프링부트 실행시키기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/gcp-gce-msa.md#GCE-위에-모놀리식-스프링부트-실행시키기))
+(참고 : [GCE 위에 모놀리식 스프링부트 실행시키기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/gcp-gce-msa.md#gcp-gce-msa.md#gce-위에-모놀리식-스프링부트-실행시키기))
 
 <br/>
 
 물론 GCE 인프라 위에 Netflix OSS/Spring Cloud 를 사용하거나 Kubernetes 를 사용하여 MSA 를 구성할 수는 있습니다.  
 하지만 해당 프로젝트는 오케스트레이션 플랫폼인 Kubernetes 를 사용하기로 했으며 이를 지원하는 GKE 를 사용하겠습니다.
 
-:construction: **작성중입니다!** :construction:
+<br/><br/>
+
+### CI/CD 파이프라인
+
+Github 에서 제공하는 `Github Actions` 은 소프트웨어 개발 Workflow 를 자동화하는 도구입니다.  
+마이크로 서비스의 통합, 배포 환경을 자동화하여 빠르고 안정적인 운영 환경을 보장해야 합니다.  
+
+<br/>
+
+아래 링크에 `Github Actions` 사용법을 정리해두었습니다.  
+[Github Actions 를 이용한 CI/CD 파이프라인 구축하기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/ci-cd.md/#github-actions-를-이용한-cicd-파이프라인-구축)
+
+
+<br/><br/>
+
+### 

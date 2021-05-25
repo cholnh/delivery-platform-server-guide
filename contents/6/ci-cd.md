@@ -29,7 +29,7 @@ Github Actions 를 이용한 CI/CD 파이프라인 구축하기 위해서 다음
 - Slack Repository
 
 GCE 인스턴스 생성 및 Docker 이미지 관리에 대해서는 아래링크를 참조바랍니다.  
-[GCE 위에 모놀리식 스프링부트 실행시키기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/gcp-gce-msa.md#GCE-위에-모놀리식-스프링부트-실행시키기)
+[GCE 위에 모놀리식 스프링부트 실행시키기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/6/gcp-gce-msa.md#gcp-gce-msa.md#gce-위에-모놀리식-스프링부트-실행시키기)
 
 <br/><br/>
 
