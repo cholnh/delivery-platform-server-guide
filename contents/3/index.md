@@ -199,7 +199,7 @@ MSA 에도 이러한 설계 패턴들이 존재합니다.
 <br/>
 
 내부 아키텍처도 설계 패턴이 존재합니다.  
-내부 아키텍처 패턴에 관한 자세한 설명은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-pattern-app.md#어플리케이션-패턴)에서 확인해주세요. 
+내부 아키텍처 패턴에 관한 자세한 설명은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-pattern-app.md#마이크로-서비스-어플리케이션-패턴)에서 확인해주세요. 
 
 <br/><br/>
 
