@@ -7,28 +7,32 @@
 ## :speech_balloon: 개요
 마이크로 서비스 어플리케이션 영역은 실제로 개발자가 구현해야 할 부분입니다.  
 서비스의 비즈니스 로직에 집중할 수 있게
+
 - 유연성
 - 확장성
 - 독립성 등
+
 을 염두에 두고 설계한 여러 패턴들이 있습니다.
 
 <br/><br/>
 
 ### 프론트엔드 연계
 우선 하나의 서비스는 보통 프론트엔드와 백엔드의 연계로 구현됩니다.  
-만약 프론트엔드가 단일 모노리스로 구성되어있다고 가정한다면, MSA 로 구성된 백엔드와의 연계가 매끄럽게 이어지지 않을것입니다.
+만약 프론트엔드가 단일 모노리스로 구성되어있다고 가정한다면,  
+MSA 로 구성된 백엔드와의 연계가 매끄럽게 이어지지 않을것입니다.
 
 <br/>
 
 업무 기능 하나가 변경되어 재배포해야 할 상황을 가정해보겠습니다.  
-백엔드 부분에서는 수정된 내용이 독립적으로 배포 가능하지만, 프론트엔드는 하나의 덩어리(모노리스)이기 때문에  
-변경되지 않은 다른 기능들도 함께 빌드, 배포되어야 합니다.  
+백엔드 부분에서는 수정된 내용이 독립적으로 배포 가능하지만,  
+프론트엔드는 하나의 덩어리(모노리스)이기 때문에 변경되지 않은 다른 기능들도 함께 빌드, 배포되어야 합니다.  
 
 <br/>
 
 따라서 이전에 백엔드가 모노리스였을 때 겪었던 문제들
 - 독립적인 기능 변경 및 배포 불가
 - 독립적인 기능 확장 불가 등
+
 을 프론트엔드의 모노리스 서비스도 동일하게 겪을 수밖에 없습니다.
 
 <br/>
@@ -37,12 +41,15 @@
 - UI 컴포지드 패턴
 - 마이크로 프론트엔드 패턴
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-fe.jpg" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-fe.png" width="700"/>|
 |-|
 |그림 1 - 독립된 팀에서 별도로 관리하는 프론트엔드|
 
 그림 1 과 같이 프론트엔드도 백엔드의 마이크로 서비스처럼 기능별로 분리하고  
 이를 조합하기 위한 프레임 형태의 부모 창을 통해 각 프론트엔드를 조합해서 동작됩니다.  
+
+<br/>
+
 각각의 마이크로 프론트엔드 조각들은 비즈니스 구현을 위해 여러 개의 백엔드 마이크로 서비스 API 를 호출하게 됩니다.  
 하나의 기능을 변경했을 때 이를 제공하는 마이크로 프론트엔드와 백엔드를 구성하는 마이크로 서비스가 모두 변경되고 배포됩니다.
 
@@ -62,7 +69,7 @@
     
     단일 진입점인 API 게이트웨이를 통해 동기 호출하는 구성입니다.
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-call-gateway.jpg" width="700"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-call-gateway.png" width="700"/>|
     |-|
     |그림 2 - 프론트엔드에서 백엔드 호출|
     
@@ -97,7 +104,7 @@
     이 방식은 동기 호출처럼 응답을 기다리지 않고 다른 다음 일을 처리합니다.  
     (물론 보낸 결과에 대한 완결성을 보장할 수 없습니다)
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-call-async.jpg" width="700"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-call-async.png" width="700"/>|
     |-|
     |그림 3 - 비동기 통신|
     
