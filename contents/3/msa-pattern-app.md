@@ -138,7 +138,7 @@ MSA 로 구성된 백엔드와의 연계가 매끄럽게 이어지지 않을것�
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-event-driven.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-event-driven2.png" width="800"/>|
 |-|
 |그림 4 - 이벤트 기반 아키텍처 개념도|
     
