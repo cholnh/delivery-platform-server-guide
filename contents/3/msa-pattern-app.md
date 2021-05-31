@@ -287,7 +287,7 @@ MSA 로 구성된 백엔드와의 연계가 매끄럽게 이어지지 않을것�
 서비스별로 데이터 저장소를 나누어 놓아도 전통적인 DB 트랜젝션을 사용한다면 문제가 발생하게 됩니다.  
 인스턴스를 스케일 아웃하여 여러 데이터 처리를 할 경우 여러 읽기/수정 작업으로 인한 리소스 교착상태가 발생할 수 있습니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-transcation1.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-transaction1.png" width="500"/>|
 |-|
 |그림 8 - CRUD 기능이 모두 있는 마이크로 서비스|
 
@@ -314,7 +314,7 @@ CQRS 패턴은 Command Query Responsibility Segregation, 즉 명령과 조회의
 
 이 CQRS 패턴을 이벤트 메시지 주도 아키텍처와 연계한 예시 모습입니다.
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-cqrs2.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-cqrs2.png" width="1000"/>|
 |-|
 |그림 10 - CQRS 패턴과 Event Driven Architecture|
 
@@ -328,5 +328,19 @@ CQRS 패턴은 Command Query Responsibility Segregation, 즉 명령과 조회의
 - 두 서비스의 데이터 일관성을 유지하기 위해 이벤트를 발생시켜 메시지 브로커를 통해 데이터를 전달 받아 동기화 시킵니다.
 - 실시간으로 데이터의 동기화가 이루어 지진않지만, 어느 시점이 되면 결과적으로 일치하게 되는 결과적 일관성을 추구합니다.
 
+<br/><br/>
+
+### API 조합과 CQRS
+각기 다른 서비스들의 기능을 연계해서 하나의 기능을 제공하는 경우에는 어떻게 해야 할까요.
+
 <br/>
+
+첫 번째 방법은 API 조합입니다.  
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-api-comp.png" width="600"/>|
+|-|
+|그림 11 - API 조합|
+
+위 예시 그림과 같이 `주문 이력 서비스`는 `제품`, `주문`, `고객`, `배송` 서비스의 정보가 모두 필요합니다.  
+각 기능을 제공하는 서비스를 조합하는 상위 마이크로 서비스를 만들어 조합된 기능을 제공할 수 있습니다.  
 
