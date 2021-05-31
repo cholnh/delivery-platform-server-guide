@@ -337,10 +337,36 @@ CQRS 패턴은 Command Query Responsibility Segregation, 즉 명령과 조회의
 
 첫 번째 방법은 API 조합입니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-api-comp.png" width="600"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-api-comp1.png" width="600"/>|
 |-|
 |그림 11 - API 조합|
 
 위 예시 그림과 같이 `주문 이력 서비스`는 `제품`, `주문`, `고객`, `배송` 서비스의 정보가 모두 필요합니다.  
 각 기능을 제공하는 서비스를 조합하는 상위 마이크로 서비스를 만들어 조합된 기능을 제공할 수 있습니다.  
 
+<br/>
+
+하지만 이 구조는 상위 서비스(주문 이력 서비스)가 하위 서비스(제품, 주문, 고객, 배송 서비스)에 의존하는 결과를 가져옵니다.  
+의존도가 높아지면 하위 API 의 작은 변경이 상위에 크게 영향을 미치게 됩니다.
+
+<br/>
+
+이러한 의존도를 낮추기 위해 CQRS 패턴을 이용할 수 있습니다.  
+주문 이력 서비스에 독자적인 저장소를 만들고, 주문 이력의 세세한 원천 정보를 각 하위 서비스로 부터 구독합니다.  
+
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-api-comp2.png" width="500"/>|
+|-|
+|그림 12 - CQRS 패턴을 이용한 기능 연계|
+
+<br/>
+
+제품, 주문, 고객, 배송 서비스들 역시 독자적으로 자신의 저장소를 갖고 서비스를 제공하며  
+자신의 서비스의 정보가 변경되는 시점에 변경 내역을 각자의 변경 이벤트로 발행합니다.  
+
+<br/>
+
+이 방식은 다른 원천 서비스가 순간적인 장애가 발생한다 하여도 타 서비스에 영향을 주지 않게됩니다.  
+
+<br/><br/>
+
+### 쓰기 최적화: 이벤트 소싱 패턴 
