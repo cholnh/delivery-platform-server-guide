@@ -287,7 +287,7 @@ MSA 로 구성된 백엔드와의 연계가 매끄럽게 이어지지 않을것�
 서비스별로 데이터 저장소를 나누어 놓아도 전통적인 DB 트랜젝션을 사용한다면 문제가 발생하게 됩니다.  
 인스턴스를 스케일 아웃하여 여러 데이터 처리를 할 경우 여러 읽기/수정 작업으로 인한 리소스 교착상태가 발생할 수 있습니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-transaction1.png" width="500"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-transaction1.png" width="400"/>|
 |-|
 |그림 8 - CRUD 기능이 모두 있는 마이크로 서비스|
 
