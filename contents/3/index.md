@@ -93,7 +93,7 @@ MSA 에도 이러한 설계 패턴들이 존재합니다.
 > 보통 대규모 시스템을 운영하는 기업들은 쿠버네티스를 사용하여 여러 패턴에 쓰이는 기술들을 안정적이고 효율적으로 운영합니다.  
 
 쿠버네티스에 관한 설명은 아래 링크를 참조해주세요.  
-[ [쿠버네티스](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-kubernetes.md#쿠버네티스) ]
+[ [쿠버네티스 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-kubernetes.md#쿠버네티스) ]
 
 <br/>
 
@@ -178,8 +178,9 @@ MSA 에도 이러한 설계 패턴들이 존재합니다.
         
 <br/>
 
-각 패턴에 관한 자세한 설명은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-pattern.md#MSA-패턴)에서 확인해주세요. 
-        
+각 패턴에 관한 자세한 설명은 아래 링크에서 확인해주세요.  
+[ [마이크로 서비스 패턴 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-pattern.md#MSA-패턴) ]
+
 <br/><br/>
 
 ### 내부 아키텍처 정의
@@ -200,7 +201,8 @@ MSA 에도 이러한 설계 패턴들이 존재합니다.
 <br/>
 
 내부 아키텍처도 설계 패턴이 존재합니다.  
-내부 아키텍처 패턴에 관한 자세한 설명은 [이곳](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-pattern-app.md#마이크로-서비스-어플리케이션-패턴)에서 확인해주세요. 
+내부 아키텍처 패턴에 관한 자세한 설명은 아래 링크에서 확인해주세요.  
+[ [마이크로 서비스 어플리케이션 패턴 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-pattern-app.md#마이크로-서비스-어플리케이션-패턴) ]
 
 <br/><br/>
 
@@ -238,7 +240,9 @@ MSA 에도 이러한 설계 패턴들이 존재합니다.
 <br/>
 
 #### 코드 스타일
-마이크로 서비스 내부 아키텍처 코드 스타일을 저장해놓은 저장소는 [이곳](https://github.com/cholnh/spring-best-practice-todo)을 참조해주세요.
+마이크로 서비스 내부 아키텍처 코드 스타일입니다.  
+소스코드는 아래 저장소를 확인해주세요.  
+[ [마이크로 서비스 내부 아키텍처 코드 스타일](https://github.com/cholnh/spring-best-practice-todo) ]
 
 <br/><br/>
 
