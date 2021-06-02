@@ -384,7 +384,7 @@ SQL 질의어로 변환하는 과정을 번거롭고 까다로울(임피던스 �
 기존에는 비즈니스 처리를 수행한 뒤 결괏값을 계산하여 데이터의 최종 상태로 저장하는 방식을 사용한다면,  
 이벤트 소싱 패턴은 발생된 비즈니스 이벤트(상태 트랜젝션 자체)를 이벤트 스트림 저장소에 저장합니다.  
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-event-sourcing.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-app-event-sourcing.png" width="800"/>|
 |-|
 |그림 13 - 이벤트 스트림 저장|
 
