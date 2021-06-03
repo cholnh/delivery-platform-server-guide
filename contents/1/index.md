@@ -37,58 +37,58 @@
 
 <br/>
 
-### 설계 / 개발 패러다임
+### 1-1. 설계 / 개발 패러다임
 - DDD
 - MSA
 - TDD
 - REST
 
-### 클라우드
+### 1-2. 클라우드
 - GKE
 
-### 컨테이너
+### 1-3. 컨테이너
 - Docker
 
-### 오케스트레이션
+### 1-4. 오케스트레이션
 - Kubernetes
 
-### 핵심 마이크로 서비스
+### 1-5. 핵심 마이크로 서비스
 - Spring Boot
     + Spring Batch
     + EHCache
 
-### 데이터 관리
+### 1-6. 데이터 관리
 - Spring Data Jpa
 - ElasticSearch
 
-### 구성 관리
+### 1-7. 구성 관리
 ~~- Spring Cloud Config~~
 
-### 비동기 메시징
+### 1-8. 비동기 메시징
 - Spring Cloud Stream
 - RabbitMQ
 
-### 회로차단/폴백/벌크헤드
+### 1-9. 회로차단/폴백/벌크헤드
 ~~- Spring Cloud~~
 ~~- Spring Netflix OSS~~
 
-### 빌드/배포
+### 1-10. 빌드/배포
 - Github Actions
 
-### 로깅
+### 1-11. 로깅
 ~~- Spring Cloud Sleuth~~
 ~~- Papertrail~~
 ~~- Zipkin~~
 - ELK (ElasticSearch, Logstash, kibana)
 
-### 보안
+### 1-12. 보안
 - Spring Oauth2
 - Spring Cloud Security
 
-### 모니터링
+### 1-13. 모니터링
 - Spring Actuator
 - Grafana
 - Prometheus
 
-### SCM
+### 1-14. SCM
 - Git
