@@ -162,7 +162,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 <br/><br/>
 
 ### 2-4. 요구사항 정의
-위에서([:link:어떤걸 만들까?](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#어떤-걸-만들까)) 
+위에서([:link:어떤걸 만들까?](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/index.md#2-2-어떤-걸-만들까)) 
 정한 배달 플랫폼 서비스는 다음과 같은 기능 요건을 가지고 있습니다.  
 
 - 사용자 관리 및 로그인
