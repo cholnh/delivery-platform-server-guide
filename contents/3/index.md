@@ -1259,6 +1259,9 @@ DTO(데이터 전송 객체) 는 질의를 통해 가져오는 정보 묶음의 
 
 ### 3-6-4. 클린 아키텍처
 
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-clean-arch.png" width="800"/>|
+|-|
+|클린 아키텍처|
 
 
 <br/><br/>
