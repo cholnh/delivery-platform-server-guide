@@ -1229,7 +1229,7 @@ DTO(데이터 전송 객체) 는 질의를 통해 가져오는 정보 묶음의 
     + 외부 요청을 처리하는 인바운드 어댑터
     + 비즈니스 로직에 의해 호출되어 외부와 연계되는 아웃바운드 어댑터
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-arch-1.png" width="900"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-hex-arch-1.png" width="800"/>|
 |-|
 |헥사고날 아키텍처의 포트와 어댑터|
 
@@ -1259,7 +1259,7 @@ DTO(데이터 전송 객체) 는 질의를 통해 가져오는 정보 묶음의 
 
 ### 3-6-4. 클린 아키텍처
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-clean-arch.png" width="800"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-clean-arch.png" width="700"/>|
 |-|
 |클린 아키텍처|
 
