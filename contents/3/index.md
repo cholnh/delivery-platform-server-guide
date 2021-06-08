@@ -1267,7 +1267,7 @@ DTO(데이터 전송 객체) 는 질의를 통해 가져오는 정보 묶음의 
 
 <br/>
 
-|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-clean-arch-2.png" width="700"/>|
+|<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-clean-arch-2.png" width="600"/>|
 |-|
 |클린 아키텍처|
 
