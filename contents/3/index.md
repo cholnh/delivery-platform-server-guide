@@ -1431,7 +1431,7 @@ DTO(데이터 전송 객체) 는 질의를 통해 가져오는 정보 묶음의 
     이를 개선한 방안으로 최상위에 존재하는 엔티티(Root Entity)를 중심으로 개념의 집합을 분리한 것이 애그리거트 패턴입니다.  
     복잡한 모델을 세 덩어리의 개념으로 분리한 예입니다.
     
-    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-aggregate-pattern.png" width="1000"/>|
+    |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/3/msa-pattern-aggregate-pattern.png" width="800"/>|
     |-|
     |애그리거트 패턴|
     
