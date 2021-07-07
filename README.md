@@ -31,6 +31,23 @@
 
 
 
+## :link: Link 
+
+- [REST API 설계](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/restful-api.md#restful-api-설계)
+- [주문 프로세스 설계](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/order-process.md#주문-프로세스)
+- [Domain Driven Development 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/ddd-strategy.md#ddd-간단-소개)
+- [DDD 이벤트 스토밍 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/event-storming.md#이벤트-스토밍)
+- [헥사고날 아키텍처 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/2/ddd-hex.md#헥사고날-아키텍처)
+- [쿠버네티스 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-kubernetes.md#쿠버네티스)
+- [도커 알아보기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/3/msa-docker.md#도커)
+- [마이크로 서비스 내부 아키텍처 코드 스타일](https://github.com/cholnh/spring-best-practice-todo)
+- [GCE 위에 모놀리식 스프링부트 실행시키기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/5/gcp-gce-msa.md#gcp-gce-msa.md#gce-위에-모놀리식-스프링부트-실행시키기)
+- [Github Actions 를 이용한 CI/CD 파이프라인 구축하기](https://github.com/cholnh/delivery-platform-server-guide/blob/main/contents/5/ci-cd.md/#github-actions-를-이용한-cicd-파이프라인-구축)
+
+<br/><br/>
+
+
+
 ## :monocle_face: 참고 
 
 - 도메인 주도 설계로 시작하는 마이크로서비스 개발 (한정헌, 유해식, 최은정, 이주영 저)
