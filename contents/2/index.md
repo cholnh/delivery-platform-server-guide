@@ -553,7 +553,7 @@ MSA 는 DDD 를 적용할 수 있는 기술적 환경을 마련해 줍니다. (M
 |<img src="https://github.com/cholnh/delivery-platform-server-guide/blob/main/assets/images/2/ddd-bc-delivery.png" width="1000"/>|
 |-|
 |배달 관리 서브도메인에 대한 이벤트 스토밍 결과|
-ㄹ
+
 <br/><br/>
 
 7. 알림/이미지 관리
